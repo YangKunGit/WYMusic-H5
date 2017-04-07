@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>高仿网易云音乐</title>
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<!--navbar-->
+<div id="navbar" class="navbar-wrapper">
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="logo pull-left">
+                <i class="fa fa-music fa-lg"></i>
+                网易云音乐
+            </a>
+            <div class="pull-right box-right">
+                <div class="search-bar">
+                    <i class="fa fa-search"></i>
+                    <form action="">
+                        <input type="text" placeholder="单曲/歌手/专辑/歌单/MV/用户">
+                    </form>
+                </div>
+                <div class="login-btn">
+                    <a href="#" data-toggle="popover" data-placement="bottom" data-container="body">登录
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                </div>
+            </div>
+            <button style="background-color: red" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">汉堡按钮</button>
+            <nav class="collapse navbar-collapse pull-left">
+                <ul id="main-menu" class="nav navbar-nav">
+                    <li class="active discover"><a href="#">发现音乐</a></li>
+                    <li><a href="#">我的音乐</a></li>
+                    <li><a href="#">朋友</a></li>
+                    <li><a href="#">商城</a></li>
+                    <li><a href="#">音乐人</a></li>
+                    <li><a href="#">下载客户端</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div id="zone" class="container">
+    <ul class="zone-list">
+        <li class="active"><a href="">推荐</a></li>
+        <li><a href="#">排行榜</a></li>
+        <li><a href="#">歌单</a></li>
+        <li><a href="#">主播电台</a></li>
+        <li><a href="#">歌手</a></li>
+        <li><a href="#">新碟上架</a></li>
+    </ul>
+</div>
+<!--<iframe src="./discover/discover.html" width="100%" height="100%" frameborder="0"></iframe>-->
+
+<script src="./js/jquery-3.2.0.min.js"></script>
+<script src="./js/tether.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./main.js"></script>
+
+<script>
+    $(function () {
+//        开启popover插件
+        $('[data-toggle=popover]').popover({
+            html: true,
+            trigger: 'click',
+            content: '<ul class="popover-list">' +
+            '<li><i class="fa fa-mobile-phone fa-lg"></i>手机号登录</li>' +
+            '<li><i class="fa fa-wechat"></i>微信登录</li>' +
+            '<li><i class="fa fa-qq"></i>QQ登录</li>' +
+            '<li><i class="fa fa-weibo"></i>新浪微博登录</li>'
+        })
+//        切换箭头样式
+        $('.login-btn').click(function () {
+            $('.login-btn i').toggleClass('fa-caret-down fa-caret-up')
+        })
+//        切换点击效果
+        $('#main-menu li').click(function () {
+            $('#main-menu li').removeClass('active')
+            $(this).addClass('active')
+            if (!$(this).hasClass('discover')) {
+                $('#zone').css('height', '5px')
+                $('.zone-list').hide()
+            } else {
+                $('#zone').css('height', '40px')
+                $('.zone-list').show()
+            }
+        })
+        $('.zone-list li').click(function () {
+            $('.zone-list li').removeClass('active')
+            $(this).addClass('active')
+        })
+
+    })
+</script>
+</body>
+</html>
