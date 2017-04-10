@@ -168,6 +168,95 @@ ul#main-menu li.active, ul#main-menu li.active a {
 }
 
 
+/*content*/
+#content-box {
+    /*width: 980px;*/
+    width: 100%;
+    min-height: 700px;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+}
+
+
+/*footer*/
+#footer {
+    position: relative;
+    height: 125px;
+    overflow: hidden;
+    border-top: 1px solid #d5d5d5;
+    background: #f9f9f9;
+}
+.f-content {
+    width: 980px;
+    margin: 0 auto;
+    height: 125px;
+    font-size: 12px;
+}
+.f-content a {
+    background-color: transparent;
+    color: #666;
+    line-height: 23px;
+    padding: 0;
+}
+.f-content i {
+    width: 35px;
+    height: 46px;
+    font-size: 35px;
+    line-height: 46px;
+    float: left;
+}
+.ft-left, .ft-center, .ft-right  {
+    float: left;
+    margin-top: 30px;
+    position: relative;
+}
+.copy {
+    padding: 0;
+}
+.copy p {
+    margin-bottom: 0;
+}
+
+
+/*scrollerToTop*/
+.scrollup{
+    position:fixed;
+    width: 48px;
+    height: 48px;
+    bottom:20px;
+    right:20px;
+    display: none;
+}
+
+a.scrollup {
+    outline:0;
+    text-decoration:none;
+    background-color: #333;
+}
+a.scrollup span {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding-top: 13px;
+    font-size: 20px;
+}
+
+a.scrollup:hover {
+    opacity:1;
+    text-decoration:none;
+    -webkit-transition: all 400ms ease-out 0s;
+    -moz-transition: all 400ms ease-out 0s;
+    -o-transition: all 400ms ease-out 0s;
+    transition: all 400ms ease-out 0s;
+    background-color: #e06d5e;
+}
+a.scrollup span:hover {
+    text-decoration:none;
+}
+
+
 
 
 

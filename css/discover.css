@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#discover {
+    background-color: #F5F5F5;
+}
+ul, li {
+    list-style: none;
+}
+
+.bg-box {
+    width: 980px;
+    min-height: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+    overflow: hidden;
+}
+
+/*swiper*/
+.header-box {
+    width: 100%;
+}
+.header-box .bg-box {
+    border: none;
+    min-height: 336px;
+    position: relative;
+}
+.flexslider {
+    width: 730px;
+    height: 336px;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+#swiper li img {
+    display: block;
+    width: 730px;
+    height: 336px;
+}
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    z-index: 100;
+}
+.flex-control-nav li {
+    margin: 0 11px;
+}
+
+.flex-control-paging li a {
+    width: 7px;
+    height: 7px;
+    display: block;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.flex-control-paging li a.flex-active, .flex-control-paging li a:hover {
+    background-color: #BD0000;
+}
+.download {
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    right: 0;
+    width: 250px;
+    height: 336px;
+    background: url(../img/download-bg.png) no-repeat center;
+    background-size: 250px 336px;
+    box-shadow: 1px -6px 20px 6px rgba(6, 6, 6, 0.53);
+}
+
+
+/*热门推荐*/
+.g-mn {
+    width: 100%;
+    float: left;
+    margin-right: -252px;
+    overflow: hidden;
+}
+.g-mnr {
+    margin-right: 252px;
+}
+.g-wrap {
+    padding: 20px 20px 40px;
+}
+.g-content {
+    width: 100%;
+    height: auto;
+}
+.g-rside {
+    float: right;
+    width: 250px;
+    height: 500px;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+    background-color: blue;
+}
+.hotspot:after, .hotspot-nav:after {
+    content:"";
+    height:0;
+    visibility:hidden;
+    display:block;
+    clear:both;
+}
+.hotspot-nav {
+    border-bottom: 2px solid #C50000;
+    line-height: 28px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.before-icon {
+    color: #C50000;
+    margin: 8px 10px;
+    float: left;
+}
+.more {
+    font-size: 12px;
+    color: #666;
+    top: 0;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.more > i {
+    color: #C50000;
+}
+.hotspot-nav > a {
+    float: left;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.tabs {
+    font-size: 12px;
+}
+.tabs span {
+    color: #CECECE;
+    padding: 0 10px;
+}
+.tabs a {
+    color: #6C6C6C;
+    text-decoration: none;
+}
+
+ul.content-list {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.content-list > li {
+    float: left;
+    padding-bottom: 30px;
+    position: relative;
+}
+.hotsopt-list > li {
+    width: 25%;
+    height: 234px;
+}
+.hotsopt-list > li > .u-cover {
+    padding: 0 15px;
+    width: 100%;
+}
+.content-list > li > .u-cover > img {
+    width: 100%;
+}
+.content-list > li > .u-cover > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 101;
+}
+
+.desc > a {
+    margin-top: 8px;
+    display: inline-block;
+    line-height: 16px;
+    font-size: 13px;
+    color: #000;
+}
+.p-num {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #fff;
+    padding: 3px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.09) , rgba(70, 70, 70, 0.18));
+}
+.play-btn {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    color: rgba(255, 255, 255, 0.67);
+    z-index: 100;
+}
+.play-small {
+    font-size: 14px !important;
+    padding-left: 4px;
+}
+
+/*个性化推荐*/
+.resource-list > li {
+    width: 50%;
+    height: 180px;
+    padding: 0;
+}
+.resource-list > li > .u-cover {
+    padding: 15px;
+    width: 171px;
+    height: 100%;
+    position: relative;
+}
+.resource-list > li > .u-cover > a {
+    padding: 15px;
+}
+.resource-list .p-num {
+    top: 15px;
+}
+.resource-text {
+    padding: 22px 0;
+}
+.resource-text p:first-child {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+.resource-text p:last-child {
+    font-size: 13px;
+    color: #8e8e8e;
+}
+.pull-left-half {
+    float: left;
+    width: 50%;
+}
+.resource-list > li:first-child {
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.resource-list > li:last-child {
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+}

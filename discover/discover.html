@@ -1,1 +1,144 @@
-<div style="background-color: red; width: 100%; height: 100%;"></div>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="http://www.ijquery.cn/js/flexslider/flexslider.css" media="all" />
+    <link rel="stylesheet" href="../css/discover.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="discover">
+    <div class="header-box">
+        <div class="bg-box">
+            <div class="flexslider">
+                <ul id="swiper" class="slides">
+                </ul>
+            </div>
+            <div class="download"></div>
+        </div>
+    </div>
+    <div class="bg-box">
+        <div class="g-mn">
+            <div class="g-mnr">
+                <div class="g-wrap">
+                    <div class="g-content">
+                        <!--热门推荐-->
+                        <div class="hotspot">
+                            <!--热推导航栏-->
+                            <div class="hotspot-nav">
+                                <i class="fa fa-dot-circle-o fa-lg before-icon"></i>
+                                <a>热门推荐</a>
+                                <div class="tabs">
+                                    <a href="">华语</a>
+                                    <span>|</span>
+                                    <a href="">流行</a>
+                                    <span>|</span>
+                                    <a href="">摇滚</a>
+                                    <span>|</span>
+                                    <a href="">民谣</a>
+                                    <span>|</span>
+                                    <a href="">电子</a>
+                                </div>
+                                <div class="more">更多 <i class="fa fa-arrow-right"></i></div>
+                            </div>
+                            <!--内容列表-->
+                            <ul class="hotsopt-list content-list">
+                            </ul>
+                        </div>
+                        <!--个性化推荐-->
+                        <div class="resource">
+                            <div class="hotspot-nav">
+                                <i class="fa fa-dot-circle-o fa-lg before-icon"></i>
+                                <a>个性化推荐</a>
+                                <div class="more">更多 <i class="fa fa-arrow-right"></i></div>
+                            </div>
+                            <ul class="resource-list content-list">
+                            </ul>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--右侧侧边栏-->
+        <div class="g-rside"></div>
+    </div>
+</div>
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../data.js"></script>
+
+<script>
+    $(function () {
+        var slides = $('#discover').find('#swiper')
+        for (var index in bannerList) {
+            var element = '<li><a href="' + bannerList[index].url + '"><img src="' + bannerList[index].picUrl + '"></a></li>'
+            slides.append(element)
+        }
+//        加载flexslider文件
+        $.getScript('https://cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js', function () {
+            $('.flexslider').flexslider({
+                animation: "fade",
+                directionNav: false,
+                start: function () {
+                    $('.header-box').css('background', 'url("' + bannerList[0].backgroundUrl + '")')
+                },
+                before: function (slider) {
+
+                    $('.header-box').css('background', 'url("' + bannerList[slider.currentSlide === (slider.count - 1) ? 0 : (slider.currentSlide + 1)].backgroundUrl + '")')
+                }
+            })
+        })
+//        加载热门推荐数据
+        var hotlist = hotspot.data
+        var hot = $('ul.hotsopt-list')
+        for (var index in hotlist) {
+            var element = '<li>' +
+                    '<div class="u-cover">' +
+                    '<img src="' + hotlist[index].picUrl + '" alt="">' +
+                    '<a href=""></a>' +
+                    '<p class="desc"><a href="">' + hotlist[index].name + '</a></p>' +
+                    '<p class="p-num"><i class="fa fa-headphones"></i> <span>' + filterCount(hotlist[index].playcount) + '</span></p>' +
+                    '<div class="play-btn">' +
+                    '<span class="fa-stack fa-lg">' +
+                    '<i class="fa fa-circle-thin fa-stack-2x"></i>' +
+                    '<i class="fa fa-play fa-stack-1x play-small"></i>' +
+                    '</span></div></div></li>'
+            hot.append(element)
+        }
+
+//        加载个性化推荐数据
+        var reslist = resource.recommend
+        var resou = $('ul.resource-list')
+        for (var index in reslist) {
+            var element = '<li>' +
+                    '<div class="u-cover pull-left-half">' +
+                    '<img src="' + reslist[index].picUrl + '" alt="">' +
+                    '<a href=""></a>' +
+                    '<p class="p-num"><i class="fa fa-headphones"></i> <span>' + filterCount(reslist[index].playcount) + '</span></p>' +
+                    '<div class="play-btn">' +
+                    '<span class="fa-stack fa-lg">' +
+                    '<i class="fa fa-circle-thin fa-stack-2x"></i>' +
+                    '<i class="fa fa-play fa-stack-1x play-small"></i>' +
+                    '</span></div></div>' +
+                    '<div class="resource-text pull-left-half">' +
+                    '<p>' + reslist[index].name + '</p>' +
+                    '<p>' + reslist[index].copywriter + '</p>' +
+                    '</div></li>'
+            resou.append(element)
+        }
+        $('.content-list > li > .u-cover > a').hover(function () {
+            $(this).siblings('.play-btn').toggle()
+        })
+    })
+
+    function filterCount(num) {
+        if (num > 100000) {
+            var w = num / 10000
+            return Math.floor(w) + '万'
+        } else {
+            return num
+        }
+    }
+</script>
+</body>
+</html>

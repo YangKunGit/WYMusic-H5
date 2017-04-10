@@ -57,47 +57,45 @@
         <li><a href="#">新碟上架</a></li>
     </ul>
 </div>
-<!--<iframe src="./discover/discover.html" width="100%" height="100%" frameborder="0"></iframe>-->
+<!--内容页-->
+<div id="content-box">
+    <iframe id="discover-box" src="./discover/discover.html" width="100%" height="2500px" frameborder=0 scrolling=no></iframe>
+    <iframe id="rank-list-box" style="display: none" src="./discover/RankList.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>
+</div>
+<!--页脚 footer-->
+<div id="footer">
+<div class="f-content row">
+    <a href="//music.163.com/recruit" class="ft-left col-md-4">
+        <i class="fa fa-globe"></i>
+        <span>独立音乐人招募计划</span>
+        <br>
+        <span>加入我们 即将与超过亿万乐迷互动</span>
+    </a>
+    <a href="//music.163.com/topic/recruit" class="ft-center col-md-3">
+        <i class="fa fa-file-text-o"></i>
+        <span>音乐专栏招募计划</span>
+        <br>
+        <span>加入我们 与同道中人交流心得</span>
+    </a>
+    <div class="copy ft-right col-md-5">
+        <p>
+            <a href="//music.163.com/about" target="_blank">关于网易</a><span>-</span>
+            <a href="//help.163.com/" target="_blank">客户服务</a><span>-</span>
+            <a href="//music.163.com/html/web2/service.html" target="_blank">服务条款</a><span>-</span>
+            <a href="//sitemap.163.com/" target="_blank">网站导航</a>
+            网易公司版权所有©1997-2017
+        </p>
+        <p>杭州乐读科技有限公司运营：<a href="http://p1.music.126.net/-DB9zs1FAJq8vg7HOb-yOQ==/3250156395654666.jpg" target="_blank">浙网文[2015]0415-135号</a><a id="g_feedback" href="#" class="fback f-fr s-fc4" onclick="nm.x.feedback();return false;" hidefocus="true"><i class="u-icn u-icn-3"></i>意见反馈</a></p>
+    </div>
+</div>
+</div>
+<!--top-btn-->
+<a href="#" class="scrollup"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 <script src="./js/jquery-3.2.0.min.js"></script>
 <script src="./js/tether.min.js"></script>
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="./main.js"></script>
-
-<script>
-    $(function () {
-//        开启popover插件
-        $('[data-toggle=popover]').popover({
-            html: true,
-            trigger: 'click',
-            content: '<ul class="popover-list">' +
-            '<li><i class="fa fa-mobile-phone fa-lg"></i>手机号登录</li>' +
-            '<li><i class="fa fa-wechat"></i>微信登录</li>' +
-            '<li><i class="fa fa-qq"></i>QQ登录</li>' +
-            '<li><i class="fa fa-weibo"></i>新浪微博登录</li>'
-        })
-//        切换箭头样式
-        $('.login-btn').click(function () {
-            $('.login-btn i').toggleClass('fa-caret-down fa-caret-up')
-        })
-//        切换点击效果
-        $('#main-menu li').click(function () {
-            $('#main-menu li').removeClass('active')
-            $(this).addClass('active')
-            if (!$(this).hasClass('discover')) {
-                $('#zone').css('height', '5px')
-                $('.zone-list').hide()
-            } else {
-                $('#zone').css('height', '40px')
-                $('.zone-list').show()
-            }
-        })
-        $('.zone-list li').click(function () {
-            $('.zone-list li').removeClass('active')
-            $(this).addClass('active')
-        })
-
-    })
-</script>
+<script src="./data.js"></script>
 </body>
 </html>
