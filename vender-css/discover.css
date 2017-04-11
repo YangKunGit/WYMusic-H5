@@ -9,16 +9,6 @@ ul, li {
     list-style: none;
 }
 
-.bg-box {
-    width: 980px;
-    min-height: 700px;
-    margin: 0 auto;
-    background-color: #fff;
-    border: 1px solid #d3d3d3;
-    border-width: 0 1px;
-    overflow: hidden;
-}
-
 /*swiper*/
 .header-box {
     width: 100%;
@@ -81,30 +71,6 @@ ul, li {
 
 
 /*热门推荐*/
-.g-mn {
-    width: 100%;
-    float: left;
-    margin-right: -252px;
-    overflow: hidden;
-}
-.g-mnr {
-    margin-right: 252px;
-}
-.g-wrap {
-    padding: 20px 20px 40px;
-}
-.g-content {
-    width: 100%;
-    height: auto;
-}
-.g-rside {
-    float: right;
-    width: 250px;
-    height: 500px;
-    border: 1px solid #d3d3d3;
-    border-width: 0 1px;
-    background-color: blue;
-}
 .hotspot:after, .hotspot-nav:after {
     content:"";
     height:0;

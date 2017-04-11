@@ -1,0 +1,76 @@
+#rank-list {
+    background-color: #F5F5F5;
+}
+
+/*  左侧列表栏  */
+.rank-list-slide {
+    margin-top: 30px;
+}
+.rank-list-slide ul {
+    padding-left: 0;
+}
+.rank-list-slide > h2 {
+    padding: 0 10px 12px 15px;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+}
+
+.rank-list-slide li {
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+}
+.rank-list-slide li:hover {
+    background: rgba(238, 238, 238, 0.73);
+}
+.left {
+    float: left;
+    width: 40px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.rank-list-slide p {
+    overflow: hidden;
+    margin-top: 2px;
+    width: 150px;
+    margin-bottom: 3px;
+}
+.rank-list-slide p:first-child {
+    font-size: 13px;
+    color: #000000;
+}
+.rank-list-slide p:last-child {
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+/*  右侧详情页 */
+.toplist-header {
+    padding: 40px;
+}
+
+.cover {
+    width: 150px;
+    height: 150px;
+    padding: 3px;
+    border: 1px solid #949494;
+}
+.fa-icon {
+    font-size: 16px;
+    padding-right: 3px;
+    color: #747474;
+}
+.toplist-header .toplist-header-msg {
+    margin-left: 20px;
+}
+.toplist-header-msg h2 {
+    font-size: 24px;
+    font-weight: 400;
+}
+.toplist-header-msg p {
+    font-size: 13px;
+}
+.btn {
+    margin-top: 15px;
+    padding: 4px 8px;
+}

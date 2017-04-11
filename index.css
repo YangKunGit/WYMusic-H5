@@ -1,11 +1,15 @@
 
 /*navbar*/
 .navbar-wrapper {
-    background-color: #313131;
+    background: url(http://s2.music.126.net/style/web2/img/frame/topbar.png?4e5130eca6bce66507b3c9f2edce5340) repeat-x 3px -80px;
 }
 
 ul, li {
     list-style: none;
+}
+
+img {
+    width: 100%;
 }
 
 ul#main-menu {
@@ -32,12 +36,13 @@ nav ul.nav-tabs {
 
 .navbar {
     margin-bottom: 0;
+    border: none;
 }
 
 a, a:hover, ul#main-menu, ul#main-menu li, ul#main-menu:hover, ul#main-menu li:hover, ul#main-menu li:focus {
     text-decoration: none;
     color: #eee;
-    background-color: #313131;
+    background: url(http://s2.music.126.net/style/web2/img/frame/topbar.png?4e5130eca6bce66507b3c9f2edce5340) repeat-x 0 -300px;
 }
 a:focus {
     background-color: #313131;
@@ -71,6 +76,10 @@ ul#main-menu li:last-child:before {
     font-size: 26px;
     font-weight: 500;
     line-height: 62px;
+    background: url(http://s2.music.126.net/style/web2/img/frame/topbar.png?4e5130eca6bce66507b3c9f2edce5340) no-repeat 0 0;
+    width: 162px;
+    height: 44px;
+    margin-top: 15px;
 }
 
 .logo i {
@@ -144,16 +153,18 @@ ul#main-menu li.active, ul#main-menu li.active a {
 
 #zone {
     width: 100%;
-    height: 40px;
+    height: 35px;
     background-color: #C60000;
     box-shadow: 7px 0 20px 0 rgba(76, 76, 76, 0.85);
+    background: url(http://s2.music.126.net/style/web2/img/frame/topbar.png?4e5130eca6bce66507b3c9f2edce5340) no-repeat 0 -230px;
+    background-repeat: repeat-x;
 }
 #zone .zone-list {
     text-align: center;
 }
 #zone .zone-list li {
     display: inline-block;
-    line-height: 40px;
+    line-height: 35px;
     margin: 0 20px;
 }
 #zone .zone-list li a {
@@ -170,11 +181,48 @@ ul#main-menu li.active, ul#main-menu li.active a {
 
 /*content*/
 #content-box {
-    /*width: 980px;*/
     width: 100%;
     min-height: 700px;
     margin: 0 auto;
     background-color: #F5F5F5;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+}
+
+.bg-box {
+    width: 980px;
+    min-height: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+    overflow: hidden;
+}
+
+.g-mn {
+    width: 100%;
+    margin-right: -252px;
+    overflow: hidden;
+}
+.g-mn-l {
+    margin-left: -252px;
+    margin-right: 0;
+}
+.g-mnr {
+    margin-right: 252px;
+}
+.g-mnl {
+    margin-left: 252px;
+}
+.g-wrap {
+    padding: 20px 20px 40px;
+}
+.g-content {
+    width: 100%;
+    height: auto;
+}
+.g-rside {
+    width: 250px;
     border: 1px solid #d3d3d3;
     border-width: 0 1px;
 }
@@ -268,18 +316,17 @@ a.scrollup span:hover {
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         position: absolute;
-        bottom: -7px;
+        bottom: -8px;
         left: 50%;
         margin-left: -4px;
         color: #C60000;
         font-size: 1.5em;
     }
+    .navbar-nav>li>a {
+        padding: 15px 19px;
+    }
 }
-/*@media (min-width: 768px) and (max-width: 992px){*/
-    /*.container {*/
-        /*width: 900px;*/
-    /*}*/
-/*}*/
+
 @media (max-width: 768px) {
     .search-bar {
         width: 50%;
