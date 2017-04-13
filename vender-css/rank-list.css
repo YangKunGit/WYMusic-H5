@@ -45,8 +45,10 @@
 }
 
 /*  右侧详情页 */
+/*  区头  */
 .toplist-header {
     padding: 40px;
+    overflow: hidden;
 }
 
 .cover {
@@ -69,8 +71,207 @@
 }
 .toplist-header-msg p {
     font-size: 13px;
+    margin-bottom: 15px;
 }
+
 .btn {
     margin-top: 15px;
     padding: 4px 8px;
+}
+
+/*  标题元素  */
+.g-wrap12 {
+    padding: 0 30px 40px 40px;
+}
+
+.g-title {
+    border-bottom: 2px solid #c20c0c;
+    overflow: hidden;
+}
+.g-title h3 {
+    float: left;
+    font-size: 21px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 30px;
+}
+.g-title p:first-of-type {
+    float: left;
+    line-height: 30px;
+    margin: 6px 10px 0 23px;
+    font-size: 12px;
+    color: #888787;
+}
+.g-title p:last-child {
+    float: right;
+    line-height: 30px;
+    font-size: 12px;
+    color: #888787;
+}
+.g-title p:last-child span {
+    color: #c20c0c;
+    font-weight: bold;
+}
+
+/*  列表表格    */
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+table th, table td {
+    vertical-align: top;
+    text-align: left;
+    font-weight: normal;
+    color: #666;
+    height: 38px;
+    background-color: #f7f7f7;
+}
+thead th {
+    border-left: 1px solid #e4e4e4;
+}
+thead th:first-child, tbody td:first-child {
+    width: 16%;
+}
+
+thead th.w2, tbody td.w2 {
+    width: 52%;
+}
+thead th.w1, tbody td.w1 {
+    width: 100px;
+}
+thead th:last-child {
+    border-right: 1px solid #e4e4e4;
+}
+thead th div.wp {
+    height: 38px;
+    line-height: 18px;
+    padding: 8px 10px;
+}
+thead {
+    border-bottom: 1px solid rgba(202, 201, 201, 0.9);
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+}
+.g-list td, .g-list tr {
+    background-color: #fff;
+}
+.g-list .even td, .g-list .even tr {
+    background-color: #f7f7f7;
+}
+
+td.td-pad1 .g-rank {
+    padding: 27px 15px;
+}
+.g-rank {
+    overflow: hidden;
+    font-size: 12px;
+    padding: 10px 15px;
+}
+.g-rank > p {
+    width: 25px;
+    text-align: center;
+}
+.g-rank > div {
+    width: 42px;
+    text-align: right;
+}
+.g-rank i {
+    width: 16px;
+    height: 17px;
+    margin: 0 auto;
+    display: block;
+    padding-left: 0;
+}
+
+td.td-pad2 {
+    padding: 12px;
+}
+.tt {
+    float: left;
+    width: 100%;
+}
+.song-pic {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.tt i {
+    float: left;
+    font-size: 21px;
+    padding: 10px 15px 10px 0;
+    color: #b9b7b7;
+    cursor: pointer;
+}
+td.td-pad2 .tt i {
+    padding: 15px 15px 10px 0;
+}
+.tt i:hover {
+    color: #6f6f6f;
+}
+td.td-pad2 .song-name {
+    padding: 15px 0;
+}
+.song-name {
+    padding: 10px 0;
+}
+.song-name a {
+    color: #000;
+    font-size: 13px;
+    font-weight: 300;
+}
+.g-msg {
+    padding: 10px 0;
+    font-size: 12px;
+}
+td.td-pad3, td.td-pad4 {
+    padding: 27px 0;
+}
+.g-msg a {
+    color: #000;
+    display: block;
+    font-weight: 300;
+    padding-left: 12px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80px;
+}
+.tool-icon {
+    display: none;
+}
+.g-list tbody tr:hover .tool-icon {
+    display: block;
+}
+.g-list tbody tr:hover .g-time {
+    display: none;
+}
+.tool-icon i {
+    padding-right: 5px;
+}
+.tool-icon i:first-child {
+    font-size: 16px;
+}
+.hidden {
+    display: none;
+}
+.u-icn {
+    background: url("http://s2.music.126.net/style/web2/img/icon.png?c73bc81d96b3e79e6d0a11378738406e") no-repeat 0 99999px;
+}
+.new-icon {
+    background-position: -67px -283px;
+}
+.up-icon {
+    background-position: -74px -299px;
+}
+.down-icon {
+    background-position: -74px -318px;
 }

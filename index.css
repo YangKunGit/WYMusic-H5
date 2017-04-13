@@ -7,6 +7,9 @@
 ul, li {
     list-style: none;
 }
+p {
+    margin: 0;
+}
 
 img {
     width: 100%;
@@ -42,9 +45,11 @@ nav ul.nav-tabs {
 a, a:hover, ul#main-menu, ul#main-menu li, ul#main-menu:hover, ul#main-menu li:hover, ul#main-menu li:focus {
     text-decoration: none;
     color: #eee;
+}
+nav ul#main-menu a {
     background: url(http://s2.music.126.net/style/web2/img/frame/topbar.png?4e5130eca6bce66507b3c9f2edce5340) repeat-x 0 -300px;
 }
-a:focus {
+ul#main-menu a:focus, ul.zone-list a:focus {
     background-color: #313131;
     text-decoration: none;
     color: #eee;

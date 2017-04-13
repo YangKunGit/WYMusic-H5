@@ -10,27 +10,51 @@
     <link rel="stylesheet" href="../vender-css/rank-list.css">
 </head>
 <body>
+<!--排行榜歌单列表-->
 <div id="rank-list">
     <div class="bg-box">
         <div class="g-mn g-mn-l pull-right">
             <div class="g-mnl">
                 <div class="g-wrap">
                     <div class="g-content">
+                        <!--歌单表头, 歌单信息-->
                         <div class="toplist-header">
                             <div class="cover pull-left">
                                 <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg" alt="">
                             </div>
                             <div class="toplist-header-msg pull-left">
                                 <h2>云音乐飙升榜</h2>
-                                <p><i class="fa fa-clock-o"></i> 最近更新：04月11日 <i style="font-size: 12px" class="fa-icon">（每天更新）</i></p>
+                                <p><i class="fa fa-clock-o"></i> 最近更新：<span>04月11日</span> <i style="font-size: 12px" class="fa-icon update-f">（每天更新）</i></p>
                                 <div class="btn-group open">
                                     <a class="btn btn-primary" href="#"><i class="fa fa-play-circle-o"></i> 播放</a>
                                     <a class="btn btn-primary" href="#"><span class="fa fa-plus"></span></a>
                                 </div>
-                                <a href="#" class="btn btn-default"><i class="fa fa-cube fa-icon"></i>(23542)</a>
-                                <a class="btn btn-default"><i class="fa fa-share-square-o fa-icon"></i>(123)</a>
+                                <a href="#" class="btn btn-default collection"><i class="fa fa-cube fa-icon"></i></a>
+                                <a class="btn btn-default share"><i class="fa fa-share-square-o fa-icon"></i></a>
                                 <a class="btn btn-default"><i class="fa fa-download fa-icon"></i>下载</a>
-                                <a class="btn btn-default"><i class="fa fa-commenting-o fa-icon"></i>(13412)</a>
+                                <a class="btn btn-default comment"><i class="fa fa-commenting-o fa-icon"></i></a>
+                            </div>
+                        </div>
+                        <!--歌单列表-->
+                        <div class="g-wrap12">
+                            <div class="g-title">
+                                <h3>歌曲列表</h3>
+                                <p><span class="">0</span>首歌</p>
+                                <p>播放: <span>0</span> 次</p>
+                            </div>
+                            <div class="g-list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="w2"><div class="wp">标题</div></th>
+                                            <th class="w1"><div class="wp">时长</div></th>
+                                            <th class="w1"><div class="wp">歌手</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -89,5 +113,134 @@
 
 <script src="../venders-js/jquery-3.2.0.min.js"></script>
 <script src="../js/data.js"></script>
+<script>
+    $(function () {
+//      更新歌单歌曲列表信息
+        updataContent()
+    })
+
+    function updataContent() {
+        var result = playList.result
+        var collectionNum = result.subscribedCount  // 收藏数
+        var shareNum = result.shareCount            //  分享数
+        var commentNum = result.commentCount        //  评论数
+        var tracks = result.tracks                  //  歌单列表
+        var rankDIV = $('.g-list tbody')            //  歌曲
+//        更新表头
+//        歌单图片
+        $('.cover img').attr('src', result.coverImgUrl)
+//        收藏
+        var collec = $('.collection')
+        collec.html(collec.html() + '(' + collectionNum + ')')
+//        分享
+        var share = $('.share')
+        share.html( share.html() + '(' + shareNum + ')')
+//        评论
+        var comment = $('.comment')
+        comment.html(comment.html() + '(' + commentNum + ')')
+//        更新日期
+        var updatehz = '(每天更新)'
+        if (diffTime(result.updateTime) < 1) {
+            updatehz = '(刚刚更新)'
+        }
+        $('.update-f').text(updatehz)
+        var update = $('.toplist-header-msg p span')
+        update.text(format(result.updateTime))
+//        数量
+        $('.g-title > p:first span').text(tracks.length)
+//        收听
+        $('.g-title > p:last span').text(result.playCount)
+
+//        更新歌单的歌曲列表
+        for (var index in tracks) {
+            var obj = tracks[index]
+//            TODO  歌手排列
+            var artists = ''
+            for (var num in obj.artists) {
+                if (num == 0) {
+                    artists += '<a>' + obj.artists[num].name + '</a>'
+                } else {
+                    artists += '/<a>' + obj.artists[num].name + '</a>'
+                }
+            }
+            var uicon = ''
+//            TODO  图标排版仍存在问题
+            if (obj.lastRank) {
+                if ((parseInt(index) + 1) == parseInt(obj.lastRank)) {
+                    uicon = '<i>- 0</i>'
+                } else if ((parseInt(index) + 1) > parseInt(obj.lastRank)) {
+                    uicon = '<i class="u-icn up-icon"><span>' + ((parseInt(index) + 1) - parseInt(obj.lastRank)) + '</span></i>'
+                } else {
+                    uicon = '<i class="down-icon u-icn"><span>' + (parseInt(obj.lastRank) - (parseInt(index) + 1)) + '</span></i>'
+                }
+            } else {
+                uicon = '<i class="u-icn new-icon"></i>'
+            }
+
+            var element = ' <tr class="' + ((index % 2 === 0) ? 'even' : '') + '"> ' +
+                    '<td class="' + (index < 3 ? 'td-pad1' : '') + '"><div class="g-rank"> ' +
+                        '<p class="pull-left">' + (parseInt(index) + 1) + '</p> ' +
+                        '<div class="pull-left">' + uicon +'</div> ' +
+                        '</div> </td> ' +
+                    '<td class="w2 ' + (index < 3 ? 'td-pad2' : '') + '"> ' +
+                        '<div class="tt"> ' +
+                        '<a class="' + (index < 3 ? '' : 'hidden') + '"><img class="song-pic" src="' + obj.album.picUrl + '" alt=""></a> ' +
+                        '<i class="fa fa-play-circle-o "></i> ' +
+                        '<div class="song-name"><a href="">' + obj.name + '</a></div> ' +
+                    '</div> </td> ' +
+                    '<td class="g-msg w1 ' + (index < 3 ? 'td-pad3' : '') + '"> ' +
+                        '<p class="g-time">' + compluteTime(obj.duration) +'</p> ' +
+                        '<div class="tool-icon"> ' +
+                        '<i class="fa fa-plus"></i> ' +
+                        '<i class="fa fa-cube fa-icon"></i> ' +
+                        '<i class="fa fa-share-square-o fa-icon"></i> ' +
+                        '<i class="fa fa-download fa-icon"></i> ' +
+                    '</div> </td> ' +
+                    '<td class="g-msg w1 ' + (index < 3 ? 'td-pad4' : '') + '"><a>' + obj.artists[num].name + '</a></td> </tr>'
+            rankDIV.append(element)
+        }
+    }
+
+    function compluteTime(seconds) {
+        seconds = Math.floor(seconds / 1000)
+        var min = Math.floor(seconds / 60),
+                second = seconds % 60
+        return (add0(min) + ':' + add0(second))
+    }
+
+    function add0(m) {
+        return m < 10 ? '0' + m : m
+    }
+    function format(shijianchuo) {
+    //  shijianchuo是整数，否则要parseInt转换
+        var time = new Date(shijianchuo);
+        var y = time.getFullYear()
+        var m = time.getMonth()+1
+        var d = time.getDate()
+        var h = time.getHours()
+        var mm = time.getMinutes()
+        var s = time.getSeconds()
+        return add0(m) + '-' + add0(d)
+    }
+
+    function diffTime(t) {
+        var date1 = new Date(t);  //开始时间
+        var date2 = new Date();    //结束时间
+        var date3 = date2.getTime() - date1.getTime()  //时间差的毫秒数
+//计算出相差天数
+        var days = Math.floor(date3 / (24 * 3600 * 1000))
+//计算出小时数
+        var leave1 = date3 % (24 * 3600 * 1000)    //计算天数后剩余的毫秒数
+        var hours = Math.floor(leave1 / (3600 * 1000))
+//计算相差分钟数
+        var leave2 = leave1 % (3600 * 1000)        //计算小时数后剩余的毫秒数
+        var minutes = Math.floor(leave2 / (60 * 1000))
+//计算相差秒数
+        var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
+        var seconds = Math.round(leave3 / 1000)
+        console.log(" 相差 " + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒")
+        return days
+    }
+</script>
 </body>
 </html>
