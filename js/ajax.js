@@ -126,7 +126,7 @@ function ajaxUrl(music, callback)
 
 // ajax加载用户歌单
 // 参数：歌单网易云 id, 歌单存储 id，回调函数
-function ajaxPlayList(lid, id, callback){
+function ajaxUserPlayList(lid, id, callback){
     if(!lid) return false;
     
     // 已经在加载了，跳过
@@ -303,4 +303,9 @@ function ajaxUserList(uid)
         }   
     });//ajax
     return true;
+}
+
+//  加载歌单列表
+function ajaxPlayList(id) {
+
 }

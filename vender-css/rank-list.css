@@ -34,6 +34,7 @@
     margin-top: 2px;
     width: 150px;
     margin-bottom: 3px;
+    font-size: 12px;
 }
 .rank-list-slide p:first-child {
     font-size: 13px;
@@ -131,11 +132,12 @@ thead th {
     border-left: 1px solid #e4e4e4;
 }
 thead th:first-child, tbody td:first-child {
-    width: 16%;
+    width: 109px;
 }
 
 thead th.w2, tbody td.w2 {
-    width: 52%;
+    width: 300px;
+    max-width: 300px;
 }
 thead th.w1, tbody td.w1 {
     width: 100px;
@@ -154,9 +156,8 @@ thead {
 tbody {
     display: table-row-group;
     vertical-align: middle;
-    border-color: inherit;
-    border-left: 1px solid #e4e4e4;
-    border-right: 1px solid #e4e4e4;
+    border: 1px solid #e4e4e4;
+    border-top: none;
 }
 .g-list td, .g-list tr {
     background-color: #fff;
@@ -226,6 +227,10 @@ td.td-pad2 .song-name {
     color: #000;
     font-size: 13px;
     font-weight: 300;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
 }
 .g-msg {
     padding: 10px 0;
@@ -274,4 +279,7 @@ td.td-pad3, td.td-pad4 {
 }
 .down-icon {
     background-position: -74px -318px;
+}
+.g-time {
+    padding-left: 12px;
 }

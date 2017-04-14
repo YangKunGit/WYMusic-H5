@@ -23,16 +23,16 @@
                                 <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg" alt="">
                             </div>
                             <div class="toplist-header-msg pull-left">
-                                <h2>云音乐飙升榜</h2>
+                                <h2 class="toplist-name"></h2>
                                 <p><i class="fa fa-clock-o"></i> 最近更新：<span>04月11日</span> <i style="font-size: 12px" class="fa-icon update-f">（每天更新）</i></p>
                                 <div class="btn-group open">
                                     <a class="btn btn-primary" href="#"><i class="fa fa-play-circle-o"></i> 播放</a>
                                     <a class="btn btn-primary" href="#"><span class="fa fa-plus"></span></a>
                                 </div>
-                                <a href="#" class="btn btn-default collection"><i class="fa fa-cube fa-icon"></i></a>
-                                <a class="btn btn-default share"><i class="fa fa-share-square-o fa-icon"></i></a>
+                                <a href="#" class="btn btn-default"><i class="fa fa-cube fa-icon"></i><span class="collection"></span></a>
+                                <a class="btn btn-default"><i class="fa fa-share-square-o fa-icon"></i><span class="share"></span></a>
                                 <a class="btn btn-default"><i class="fa fa-download fa-icon"></i>下载</a>
-                                <a class="btn btn-default comment"><i class="fa fa-commenting-o fa-icon"></i></a>
+                                <a class="btn btn-default"><i class="fa fa-commenting-o fa-icon"></i><span class="comment"></span></a>
                             </div>
                         </div>
                         <!--歌单列表-->
@@ -64,93 +64,127 @@
         <div class="g-rside pull-left">
             <div class="rank-list-slide">
                 <h2>云音乐特色榜</h2>
-                <ul>
-                    <li>
-                        <div class="left">
-                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt="">
-                        </div>
-                        <p>云音乐飙升榜</p>
-                        <p>每天更新</p>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt="">
-                        </div>
-                        <p>云音乐飙升榜</p>
-                        <p>每天更新</p>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt="">
-                        </div>
-                        <p>云音乐飙升榜</p>
-                        <p>每天更新</p>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt="">
-                        </div>
-                        <p>云音乐飙升榜</p>
-                        <p>每天更新</p>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <img src="http://p4.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt="">
-                        </div>
-                        <p>云音乐飙升榜</p>
-                        <p>每天更新</p>
-                    </li>
+                <ul class="rank-tese-list">
                 </ul>
                 <h2>全球媒体榜</h2>
-                <ul>
+                <ul class="rank-quanqiu-list">
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-
-
 <script src="../venders-js/jquery-3.2.0.min.js"></script>
 <script src="../js/data.js"></script>
 <script>
+    var topArray
     $(function () {
+//        更新榜单列表
+        updataList()
 //      更新歌单歌曲列表信息
-        updataContent()
+//        updataContent()
     })
 
-    function updataContent() {
-        var result = playList.result
-        var collectionNum = result.subscribedCount  // 收藏数
+    function updataList() {
+        topArray = []
+        var list = rankList.list
+        var teseList = $('.rank-tese-list')             //  特色榜
+        var quanqiuList = $('.rank-quanqiu-list')       //  全球榜
+        for (var index in list) {
+           var topModel = {
+               coverImg : list[index].coverImgUrl,   //  榜单图片
+               trackCount : list[index].trackCount,  // 榜单歌曲数量
+               collectionNum : list[index].subscribedCount,  // 收藏数
+               updateTime : list[index].updateTime,          // 更新时间
+               playCount : list[index].playCount,           //  收听数
+               description : list[index].description,       //  歌单详情描述
+               name : list[index].name,                     //  歌单名
+               id : list[index].id,                         //  id
+               updateFrequency : list[index].updateFrequency,   //  更新周期
+           }
+//            标签
+            var element = '<li> ' +
+                            '<div class="left"> ' +
+                                '<img src="' + topModel.coverImg + '?param=40y40" alt="">' +
+                            ' </div> ' +
+                            '<p>' + topModel.name + '</p> ' +
+                            '<p>' + topModel.updateFrequency +'</p> ' +
+                            '</li>'
+            if (index < 4) {        //  特色榜列表
+                teseList.append(element)
+            } else {                //  全球榜列表
+                quanqiuList.append(element)
+            }
+            topArray.push(topModel)
+        }
+
+//        默认加载第一个歌单数据
+        listClick(0)
+
+//        歌单列表的点击方法
+        $('.rank-list-slide li').click(function () {
+            var index
+            if ($(this).parent().hasClass('rank-tese-list')) {
+                index = $(this).index()
+            } else  {
+                index = $(this).index() + 4
+            }
+            console.log($(this).index())
+            listClick(index)
+        })
+    }
+
+//
+    function listClick(index) {
+        var model = topArray[index]
+//        更新表头
+        $('.toplist-name').text(model.name)
+//        歌单图片
+        $('.cover img').attr('src', model.coverImg)
+//        收藏
+        var collec = $('.collection')
+        collec.text('(' + model.collectionNum + ')')
+//        更新日期
+        var updatehz = model.updateFrequency
+        $('.update-f').text(updatehz)
+        console.log(updatehz)
+        var update = $('.toplist-header-msg p span')
+        update.text(format(model.updateTime))
+//        数量
+        $('.g-title > p:first span').text(model.trackCount)
+//        收听
+        $('.g-title > p:last span').text(model.playCount)
+
+        $.ajax({
+            type: "GET",
+            url: 'http://192.168.1.115:8881/api.php',
+            data: 'types=playlist&id=' + topArray[index].id,
+            dataType : "jsonp",
+            success: function(jsonData) {
+                updataContent(jsonData.result)
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    }
+
+//    加载歌单列表
+    function updataContent(result) {
         var shareNum = result.shareCount            //  分享数
         var commentNum = result.commentCount        //  评论数
         var tracks = result.tracks                  //  歌单列表
         var rankDIV = $('.g-list tbody')            //  歌曲
-//        更新表头
-//        歌单图片
-        $('.cover img').attr('src', result.coverImgUrl)
-//        收藏
-        var collec = $('.collection')
-        collec.html(collec.html() + '(' + collectionNum + ')')
-//        分享
+        //        分享
         var share = $('.share')
-        share.html( share.html() + '(' + shareNum + ')')
+        share.text('(' + shareNum + ')')
 //        评论
         var comment = $('.comment')
-        comment.html(comment.html() + '(' + commentNum + ')')
-//        更新日期
-        var updatehz = '(每天更新)'
-        if (diffTime(result.updateTime) < 1) {
-            updatehz = '(刚刚更新)'
-        }
-        $('.update-f').text(updatehz)
-        var update = $('.toplist-header-msg p span')
-        update.text(format(result.updateTime))
-//        数量
-        $('.g-title > p:first span').text(tracks.length)
-//        收听
-        $('.g-title > p:last span').text(result.playCount)
+        comment.text('(' + commentNum + ')')
 
+//        TODO  列表切换需要加一个加载等待
+//       清空列表
+        rankDIV.empty()
 //        更新歌单的歌曲列表
         for (var index in tracks) {
             var obj = tracks[index]
@@ -176,7 +210,7 @@
             } else {
                 uicon = '<i class="u-icn new-icon"></i>'
             }
-
+//          标签内容
             var element = ' <tr class="' + ((index % 2 === 0) ? 'even' : '') + '"> ' +
                     '<td class="' + (index < 3 ? 'td-pad1' : '') + '"><div class="g-rank"> ' +
                         '<p class="pull-left">' + (parseInt(index) + 1) + '</p> ' +
@@ -201,6 +235,7 @@
         }
     }
 
+//    计算毫秒为00:00格式
     function compluteTime(seconds) {
         seconds = Math.floor(seconds / 1000)
         var min = Math.floor(seconds / 60),
@@ -211,6 +246,8 @@
     function add0(m) {
         return m < 10 ? '0' + m : m
     }
+
+//    将时间戳转成日期格式
     function format(shijianchuo) {
     //  shijianchuo是整数，否则要parseInt转换
         var time = new Date(shijianchuo);
@@ -223,6 +260,7 @@
         return add0(m) + '-' + add0(d)
     }
 
+//    两个时间戳的时间差
     function diffTime(t) {
         var date1 = new Date(t);  //开始时间
         var date2 = new Date();    //结束时间
