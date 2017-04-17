@@ -78,6 +78,7 @@ ul, li {
     display:block;
     clear:both;
 }
+
 .hotspot-nav {
     border-bottom: 2px solid #C50000;
     line-height: 28px;
@@ -90,17 +91,7 @@ ul, li {
     margin: 8px 10px;
     float: left;
 }
-.more {
-    font-size: 12px;
-    color: #666;
-    top: 0;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
-.more > i {
-    color: #C50000;
-}
+
 .hotspot-nav > a {
     float: left;
     font-size: 20px;
@@ -109,6 +100,22 @@ ul, li {
     margin-right: 20px;
     cursor: pointer;
 }
+
+.hotspot-nav .more {
+    font-size: 12px;
+    color: #666;
+    top: 0;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    margin-right: 0;
+}
+
+.hotspot-nav .more > i {
+    color: #C50000;
+    margin-left: 5px;
+}
+
 .tabs {
     font-size: 12px;
 }
@@ -221,4 +228,133 @@ ul.content-list {
 .resource-list > li:last-child {
     border-top: 1px solid #eee;
     border-left: 1px solid #eee;
+}
+
+
+/*  榜单推荐  */
+.dl-box {
+    float: left;
+    width: 230px;
+}
+.dl-box .top {
+    padding: 20px 10px 20px 19px;
+    overflow: hidden;
+}
+.dl-box-s {
+    width: 226px;
+}
+
+.top .u-cover {
+    width: 80px;
+    height: 80px;
+    float: left;
+    position: relative;
+    -webkit-box-shadow: 2px 5px 13px 0 #8e8e8e;
+    box-shadow: 2px 5px 13px 0 #8e8e8e;
+}
+.top .u-cover a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.u-title {
+    float: left;
+    margin: 3px 0 3px 10px;
+}
+.u-title a:first-child {
+    margin-bottom: 0;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+}
+.u-title a {
+    color: #000;
+}
+.u-title a:nth-child(2), .u-title a:nth-child(3) {
+    color: #b9b7b7;
+    font-size: 28px;
+    margin-left: 10px;
+    margin-top: 3px;
+    display: inline-block;
+}
+.u-title a:nth-child(3) {
+    font-size: 26px;
+}
+.u-title a:nth-child(2):hover, .u-title a:nth-child(3):hover {
+    color: #6f6f6f;
+}
+.g-bilist {
+    background: url(http://s2.music.126.net/style/web2/img/index/index_bill.png?8da187cd00265abc103105e1cf6afe5a) no-repeat;
+    overflow: hidden;
+}
+.dl-box ul {
+    height: 319px;
+    margin-left: 50px;
+    line-height: 32px;
+    margin-bottom: 0;
+}
+.dl-box ul li {
+    height: 32px;
+}
+.dl-box ul li span.no {
+    float: left;
+    position: relative;
+    width: 35px;
+    height: 32px;
+    margin-left: -35px;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+}
+.dl-box ul li span.no-top {
+    color: #c10d0c;
+}
+
+.dl-box ul li.z-hvr a.nm {
+
+    width: 92px;
+
+}
+.dl-box ul li a.nm {
+    float: left;
+    width: 170px;
+    height: 32px;
+    color: #000;
+    font-size: 13px;
+    line-height: 32px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.z-hvr .oper {
+    display: block;
+}
+
+.oper {
+    float: right;
+    width: 82px;
+    display: none;
+}
+
+.oper a {
+    color: #b9b7b7;
+    padding: 3px;
+    font-size: 15px;
+}
+.oper a:hover {
+    color: #6f6f6f;
+}
+.g-bilist .list-more {
+    clear: both;
+    height: 32px;
+    margin-right: 32px;
+    text-align: right;
+    line-height: 32px;
+}
+.g-bilist .list-more a {
+    color: #000;
 }

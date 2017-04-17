@@ -80,40 +80,6 @@
     padding: 4px 8px;
 }
 
-/*  标题元素  */
-.g-wrap12 {
-    padding: 0 30px 40px 40px;
-}
-
-.g-title {
-    border-bottom: 2px solid #c20c0c;
-    overflow: hidden;
-}
-.g-title h3 {
-    float: left;
-    font-size: 21px;
-    font-weight: 400;
-    margin: 0;
-    line-height: 30px;
-}
-.g-title p:first-of-type {
-    float: left;
-    line-height: 30px;
-    margin: 6px 10px 0 23px;
-    font-size: 12px;
-    color: #888787;
-}
-.g-title p:last-child {
-    float: right;
-    line-height: 30px;
-    font-size: 12px;
-    color: #888787;
-}
-.g-title p:last-child span {
-    color: #c20c0c;
-    font-weight: bold;
-}
-
 /*  列表表格    */
 tr {
     display: table-row;

@@ -12,7 +12,16 @@ $(function () {
     initDiscover()
 
 //    iframe高度计算
+    labelClickFun(0)
     startInit('discover-box', 700)
+
+    window.onhashchange = function () {
+        console.log('加载')
+        var hash = location.hash;
+        console.log(hash)
+        var url = hash.substring(1,hash.length);
+        //$("#baseIframe").attr("src", url);
+    }
 
 })
 
@@ -65,33 +74,58 @@ function navbarAction() {
     })
 //        点击首页标签栏
     $('.zone-list li').click(function () {
-        $('#content-box').children().fadeOut()
-        $('.zone-list li').removeClass('active')
-        $(this).addClass('active')
-        switch ($(this).index()) {
-            case 0:     //  推荐
-                $('#discover-box').fadeIn()
-                break
-            case 1:     //  排行榜
-                $('#rank-list-box').fadeIn()
-                startInit('rank-list-box', 700)
-                break
-            case 2:     //  歌单
-                break
-            case 3:     //  主播电台
-                break
-            case 4:     //  歌手
-                break
-            case 5:     //  新碟上架
-                break
-        }
+        labelClickFun($(this).index())
     })
+}
+
+function labelClickFun(index) {
+    //$('#content-box').children().fadeOut()
+    var li = $('.zone-list li')
+    li.removeClass('active')
+    li.eq(index).addClass('active')
+    //$(this).addClass('active')
+    var box = $('#discover-box')[0]
+    switch (index) {
+        case 0:     //  推荐
+            box.contentWindow.location.href = '../WYMusic-H5/discover/discover.html'
+            loadIframe('discover')
+            break
+        case 1:     //  排行榜
+            //$('#rank-list-box').fadeIn()
+            loadIframe('ranklist')
+            box.contentWindow.location.href = '../WYMusic-H5/discover/RankList.html'
+            //$('#discover-box').attr('src', '../WYMusic-H5/discover/RankList.html')
+
+            //window.navigator('')
+            //window.navigate('../WYMusic-H5/discover/RankList.html')
+            break
+        case 2:     //  歌单
+            break
+        case 3:     //  主播电台
+            break
+        case 4:     //  歌手
+            break
+        case 5:     //  新碟上架
+            break
+    }
+    startInit('discover-box', 700)
+}
+
+//  TODO 锚点变化
+function loadIframe(url) {
+    var u = window.location.href
+    console.log(u)
+    var end = u.indexOf("#")
+    var rurl = u.substring(0,end)
+    console.log(rurl)
+    //设置新的锚点
+    window.location.href = rurl + "#" + url
+    console.log(window.location.href)
 }
 
 // 滚动监听
 function scrollListener() {
     $(window).scroll(function (event) {
-        //console.log(event)
         var scrollY = event.currentTarget.scrollY
         $('.scrollup').css('display', scrollY > 0 ? 'block' : 'none')
     })
@@ -99,7 +133,6 @@ function scrollListener() {
 
 //  初始化发现音乐页
 function initDiscover() {
-    //console.log($('#discover-box').contents().find('#discover'))
     for (var obj in bannerList) {
         var element = '<li><a href="' + bannerList[obj].url + '"><img src="' + bannerList[obj].picUrl + '"></a></li>'
         //$('.slides').append(element)
@@ -108,6 +141,7 @@ function initDiscover() {
 
 
 //  iframe高度自适应
+//  TODO iframe切换仍存在问题, 切换到榜单界面再切回来,  高度还是榜单界面的高度
 function reinitIframe(iframeId, minHeight) {
     var browserVersion = window.navigator.userAgent.toUpperCase();
     var isOpera = browserVersion.indexOf("OPERA") > -1 ? true : false;
@@ -119,15 +153,15 @@ function reinitIframe(iframeId, minHeight) {
     try {
         var iframe = document.getElementById(iframeId);
         var bHeight = 0;
-        if (isChrome == false && isSafari == false)
+        if (isChrome == false && isSafari == false) {
             bHeight = iframe.contentWindow.document.body.scrollHeight;
-
+        }
         var dHeight = 0;
-        if (isFireFox == true)
+        if (isFireFox == true) {
             dHeight = iframe.contentWindow.document.documentElement.offsetHeight + 2;
-        else if (isIE == false && isOpera == false)
+        } else if (isIE == false && isOpera == false) {
             dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
-        else if (isIE == true && isIE9More) {//ie9+
+        } else if (isIE == true && isIE9More) {//ie9+
             var heightDeviation = bHeight - eval("window.IE9MoreRealHeight" + iframeId);
             if (heightDeviation == 0) {
                 bHeight += 3;
@@ -135,9 +169,9 @@ function reinitIframe(iframeId, minHeight) {
                 eval("window.IE9MoreRealHeight" + iframeId + "=" + bHeight);
                 bHeight += 3;
             }
-        }
-        else//ie[6-8]、OPERA
+        } else {  //ie[6-8]、OPERA
             bHeight += 3;
+        }
         var height = Math.max(bHeight, dHeight);
         if (height < minHeight) height = minHeight;
         iframe.style.height = height + "px";
@@ -148,5 +182,5 @@ function startInit(iframeId, minHeight) {
         //eval("window.IE9MoreRealHeight" + iframeId + "=0");
     window.setInterval(function () {
         reinitIframe(iframeId, minHeight)
-    }, 100)
+    }, 200)
 }

@@ -56,6 +56,40 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div id="comment-box">
+                                <div class="g-title">
+                                    <h3>评论</h3>
+                                    <p>共<span class="">134513</span>条评论</p>
+                                    <p></p>
+                                </div>
+                                <div class="m-cmmt">
+                                    <div class="iptarea">
+                                        <div class="head">
+                                            <img src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=50y50" alt="">
+                                        </div>
+                                        <div class="m-cmmtipt">
+                                            <div class="u-txtwrap">
+                                                <textarea class="u-txt area" placeholder="评论"></textarea>
+                                                <i class="arrclr"></i>
+                                            </div>
+                                            <div class="btns">
+                                                <i class="fa fa-smile-o fa-lg"></i>
+                                                <i class="fa fa-at fa-lg"></i>
+                                                <div class="comen-btn">
+                                                    <span>140</span>
+                                                    <a href="" class="btn btn-primary">评论</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>最新评论(24132)</h4>
+                                        <ul>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,13 +111,39 @@
 <script src="../venders-js/jquery-3.2.0.min.js"></script>
 <script src="../js/data.js"></script>
 <script>
+//    排行榜列表
     var topArray
+//    接口地址
+    var apiUrl = 'http://192.168.1.115:8888/api.php'
     $(function () {
 //        更新榜单列表
         updataList()
-//      更新歌单歌曲列表信息
-//        updataContent()
+
+//          获取URL参数
+        var id = getParams('id')
+        if (id) {
+            for (var i = 0; i < topArray.length; i++) {
+                var model = topArray[i]
+                if (model.id == id) {
+                    listClick(i)
+                }
+            }
+        } else {
+//           默认加载第一个歌单数据
+            listClick(0)
+        }
     })
+
+//      获取url中的参数
+    function getParams(name) {
+        if (window.location.search) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            console.log(decodeURI(r[2]))
+            if (r != null) return decodeURI(r[2]);
+        }
+    }
+
 
     function updataList() {
         topArray = []
@@ -91,25 +151,25 @@
         var teseList = $('.rank-tese-list')             //  特色榜
         var quanqiuList = $('.rank-quanqiu-list')       //  全球榜
         for (var index in list) {
-           var topModel = {
-               coverImg : list[index].coverImgUrl,   //  榜单图片
-               trackCount : list[index].trackCount,  // 榜单歌曲数量
-               collectionNum : list[index].subscribedCount,  // 收藏数
-               updateTime : list[index].updateTime,          // 更新时间
-               playCount : list[index].playCount,           //  收听数
-               description : list[index].description,       //  歌单详情描述
-               name : list[index].name,                     //  歌单名
-               id : list[index].id,                         //  id
-               updateFrequency : list[index].updateFrequency,   //  更新周期
-           }
+            var topModel = {
+                coverImg: list[index].coverImgUrl,   //  榜单图片
+                trackCount: list[index].trackCount,  // 榜单歌曲数量
+                collectionNum: list[index].subscribedCount,  // 收藏数
+                updateTime: list[index].updateTime,          // 更新时间
+                playCount: list[index].playCount,           //  收听数
+                description: list[index].description,       //  歌单详情描述
+                name: list[index].name,                     //  歌单名
+                id: list[index].id,                         //  id
+                updateFrequency: list[index].updateFrequency,   //  更新周期
+            }
 //            标签
             var element = '<li> ' +
-                            '<div class="left"> ' +
-                                '<img src="' + topModel.coverImg + '?param=40y40" alt="">' +
-                            ' </div> ' +
-                            '<p>' + topModel.name + '</p> ' +
-                            '<p>' + topModel.updateFrequency +'</p> ' +
-                            '</li>'
+                    '<div class="left"> ' +
+                    '<img src="' + topModel.coverImg + '?param=40y40" alt="">' +
+                    ' </div> ' +
+                    '<p>' + topModel.name + '</p> ' +
+                    '<p>' + topModel.updateFrequency + '</p> ' +
+                    '</li>'
             if (index < 4) {        //  特色榜列表
                 teseList.append(element)
             } else {                //  全球榜列表
@@ -117,9 +177,6 @@
             }
             topArray.push(topModel)
         }
-
-//        默认加载第一个歌单数据
-        listClick(0)
 
 //        歌单列表的点击方法
         $('.rank-list-slide li').click(function () {
@@ -157,10 +214,11 @@
 
         $.ajax({
             type: "GET",
-            url: 'http://192.168.1.115:8881/api.php',
+            url: apiUrl,
             data: 'types=playlist&id=' + topArray[index].id,
             dataType : "jsonp",
             success: function(jsonData) {
+                console.log(jsonData)
                 updataContent(jsonData.result)
             },
             error: function (error) {

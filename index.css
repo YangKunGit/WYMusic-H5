@@ -310,6 +310,135 @@ a.scrollup span:hover {
 }
 
 
+/*  标题元素  */
+.g-wrap12 {
+    padding: 0 36px 40px 40px;
+}
+
+.g-title {
+    border-bottom: 2px solid #c20c0c;
+    overflow: hidden;
+}
+.g-title h3 {
+    float: left;
+    font-size: 21px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 30px;
+}
+.g-title p:first-of-type {
+    float: left;
+    line-height: 30px;
+    margin: 6px 10px 0 23px;
+    font-size: 12px;
+    color: #888787;
+}
+.g-title p:last-child {
+    float: right;
+    line-height: 30px;
+    font-size: 12px;
+    color: #888787;
+}
+.g-title p:last-child span {
+    color: #c20c0c;
+    font-weight: bold;
+}
+
+
+/* comment */
+#comment-box {
+    margin-top: 40px;
+}
+.m-cmmt {
+    margin-top: 20px;
+}
+.m-cmmt .head img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: -100px;
+}
+.m-cmmt .m-cmmtipt {
+    margin-left: 70px;
+}
+.u-txt {
+    height: 19px;
+    margin: 0;
+    padding: 5px 6px 6px;
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    line-height: 19px;
+}
+textarea.u-txt {
+    width: 100%;
+    margin-right: -20px;
+    resize: none;
+}
+.m-cmmtipt .area {
+    height: 50px;
+    box-sizing: content-box;
+}
+.u-txtwrap {
+    position: relative;
+}
+.arrclr {
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 11px;
+    left: -4px;
+    transform: rotate(45deg);
+    border-bottom: 1px solid #c3c0c0;
+    border-left: 1px solid #c3c0c0;
+    background: white;
+    z-index: 2;
+}
+.m-cmmtipt .btns {
+    clear: both;
+    padding-top: 10px;
+    overflow: hidden;
+}
+.btns .fa {
+    float: left;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    line-height: 33px;
+}
+.comen-btn {
+    float: right;
+}
+.comen-btn span {
+    font-size: 12px;
+    line-height: 33px;
+    margin-right: 7px;
+    color: #a9a9a9;
+}
+.comen-btn .btn {
+    margin: 0;
+    font-size: 12px;
+    padding: 3px 6px;
+}
+
+
+
+
+
+
+
+
+/* playerBar */
+.g-bottomBar {
+    position: fixed;
+    _position: absolute;
+    zoom: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    z-index: 1002;
+}
+
 
 
 

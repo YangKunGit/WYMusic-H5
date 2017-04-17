@@ -40,7 +40,7 @@
                                     <span>|</span>
                                     <a href="">电子</a>
                                 </div>
-                                <div class="more">更多 <i class="fa fa-arrow-right"></i></div>
+                                <a class="more">更多 <i class="fa fa-arrow-right"></i></a>
                             </div>
                             <!--内容列表-->
                             <ul class="hotsopt-list content-list">
@@ -51,12 +51,21 @@
                             <div class="hotspot-nav">
                                 <i class="fa fa-dot-circle-o fa-lg before-icon"></i>
                                 <a>个性化推荐</a>
-                                <div class="more">更多 <i class="fa fa-arrow-right"></i></div>
+                                <a class="more">更多 <i class="fa fa-arrow-right"></i></a>
                             </div>
                             <ul class="resource-list content-list">
                             </ul>
                         </div>
-                        <!---->
+                        <!--榜单推荐-->
+                        <div class="rank">
+                            <div class="hotspot-nav">
+                                <i class="fa fa-dot-circle-o fa-lg before-icon"></i>
+                                <a>榜单推荐</a>
+                                <a class="more" href="RankList.html">更多 <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                            <div class="g-bilist">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,6 +79,7 @@
 
 <script>
     $(function () {
+//       加载banner图
         var slides = $('#discover').find('#swiper')
         for (var index in bannerList) {
             var element = '<li><a href="' + bannerList[index].url + '"><img src="' + bannerList[index].picUrl + '"></a></li>'
@@ -130,6 +140,46 @@
         $('.content-list > li > .u-cover > a').hover(function () {
             $(this).siblings('.play-btn').toggle()
         })
+
+//        加载榜单推荐数据
+        var bilist = $('.g-bilist')
+        var apiUrl = 'http://192.168.1.115:8888/api.php'
+        for (var index in recommendRankList) {
+            var result = recommendRankList[index].result
+            var subElement = ''
+            for (var i = 0; i < 10; i++) {
+                var track = result.tracks[i]
+                subElement += '<li> ' +
+                        '<span class="no' + (i < 3 ? ' no-top' : '') + '">' + (i + 1) + '</span> ' +
+                        '<a class="nm" title="' + track.name + '" href="">' + track.name + '</a> ' +
+                        '<div class="oper"> ' +
+                        '<a href=""><i class="fa fa-play-circle-o"></i></a> ' +
+                        '<a href=""><i class="fa fa-plus"></i></a> ' +
+                        '<a href=""><i class="fa fa-cube"></i></a> ' +
+                        '</div> </li>'
+            }
+            var element = '<div class="dl-box' + ((index == recommendRankList.length - 1) ? ' dl-box-s' : '') + '">' +
+                    '<div class="top"> ' +
+                    '<div class="u-cover"> ' +
+                    '<img src="' + result.coverImgUrl + '?param=100y100" alt=""> ' +
+                    '<a href=""></a> ' +
+                    '</div> ' +
+                    '<div class="u-title"> ' +
+                    '<a href="" class="u-title-t">' + result.name + '</a> ' +
+                    '<a href=""><i class="fa fa-play-circle-o"></i></a> ' +
+                    '<a href=""><i class="fa fa-cube"></i></a> ' +
+                    '</div> </div> ' +
+                    '<ul>' + subElement + '</ul>' +
+                    ' <div class="list-more"><a href="RankList.html?id=' + result.id + '">查看全部></a></div>' +
+                    ' </div>'
+            bilist.append(element)
+        }
+
+//        榜单推荐的hover方法
+        $('.dl-box ul li').hover(function () {
+            $(this).toggleClass('z-hvr')
+        })
+
     })
 
     function filterCount(num) {
