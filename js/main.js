@@ -65,27 +65,40 @@ function navbarAction() {
     })
 //        点击首页标签栏
     $('.zone-list li').click(function () {
-        $('#content-box').children().fadeOut()
-        $('.zone-list li').removeClass('active')
-        $(this).addClass('active')
-        switch ($(this).index()) {
-            case 0:     //  推荐
-                $('#discover-box').fadeIn()
-                break
-            case 1:     //  排行榜
-                $('#rank-list-box').fadeIn()
-                startInit('rank-list-box', 700)
-                break
-            case 2:     //  歌单
-                break
-            case 3:     //  主播电台
-                break
-            case 4:     //  歌手
-                break
-            case 5:     //  新碟上架
-                break
-        }
+        console.log($(this).index())
+        labelClickFun($(this).index())
     })
+}
+
+function labelClickFun(index) {
+    //$('#content-box').children().fadeOut()
+    var li = $('.zone-list li')
+    li.removeClass('active')
+    console.log(li.eq(index))
+    li.eq(index).addClass('active')
+    //$(this).addClass('active')
+    var box = $('#discover-box')[0]
+    switch (index) {
+        case 0:     //  推荐
+            box.contentWindow.location.href = '../WYMusic-H5/discover/discover.html'
+            break
+        case 1:     //  排行榜
+            //$('#rank-list-box').fadeIn()
+            console.log('ranklist')
+            //box.contentWindow.location.href = '../WYMusic-H5/discover/RankList.html'
+            window.navigator('')
+            window.navigate('../WYMusic-H5/discover/RankList.html')
+            break
+        case 2:     //  歌单
+            break
+        case 3:     //  主播电台
+            break
+        case 4:     //  歌手
+            break
+        case 5:     //  新碟上架
+            break
+    }
+    //startInit('rank-list-box', 700)
 }
 
 // 滚动监听

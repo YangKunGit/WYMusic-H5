@@ -77,7 +77,10 @@
 <script src="../venders-js/jquery-3.2.0.min.js"></script>
 <script src="../js/data.js"></script>
 <script>
+//    排行榜列表
     var topArray
+//    接口地址
+    var apiUrl = 'http://192.168.1.101:8888/api.php'
     $(function () {
 //        更新榜单列表
         updataList()
@@ -157,10 +160,11 @@
 
         $.ajax({
             type: "GET",
-            url: 'http://192.168.1.115:8881/api.php',
+            url: apiUrl,
             data: 'types=playlist&id=' + topArray[index].id,
             dataType : "jsonp",
             success: function(jsonData) {
+                console.log(jsonData)
                 updataContent(jsonData.result)
             },
             error: function (error) {
