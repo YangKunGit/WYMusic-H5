@@ -418,7 +418,17 @@ textarea.u-txt {
     font-size: 12px;
     padding: 3px 6px;
 }
-
+.comment-list h4 {
+    font-size: 1em;
+}
+.comment-list ul li {
+    border-top: 1px solid gainsboro;
+    padding: 15px 0;
+    overflow: hidden;
+}
+.comment-list ul {
+    padding: 0;
+}
 
 
 

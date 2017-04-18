@@ -138,6 +138,16 @@ switch($types)
          $post_data = '';
          echojson(curl($url,$post_data));
          break;
+    case "comments":
+    	  $id = getParam('id');  //歌单ID
+         if(!$id){
+            $tempArr = array("code"=>-1,"msg"=>"歌单ID为空");
+            echojson(json_encode($tempArr));
+         }
+         $url= "http://music.163.com/v1/weapi/v1/resource/comments?id=($id)&limit=10&offset=0&csrf_token=";    //请求url
+         $post_data = '';
+         echojson(curl($url,$post_data));
+         break;
     case "search":  //搜索歌曲
     default:
         $s = getParam('name');  //歌名

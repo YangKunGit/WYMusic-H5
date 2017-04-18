@@ -82,7 +82,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="comment-list">
+                                        <h4>精彩评论</h4>
+                                        <ul>
+                                            <li>
+                                                <div class="head">
+                                                    <img src="http://p1.music.126.net/GkAM6BssIVaFX921uE1KFA==/1410673420308662.jpg?param=50y50" alt="">
+                                                </div>
+                                                <div class="f-brk cnt"></div>
+                                                <div class="f-brk que"></div>
+                                            </li>
+                                        </ul>
                                         <h4>最新评论(24132)</h4>
                                         <ul>
                                             <li></li>
@@ -114,7 +124,8 @@
 //    排行榜列表
     var topArray
 //    接口地址
-    var apiUrl = 'http://192.168.1.115:8888/api.php'
+//    var apiUrl = 'http://192.168.1.115:8888/api.php'
+    var apiUrl = 'http://192.168.1.101:8888/api.php'
     $(function () {
 //        更新榜单列表
         updataList()
@@ -132,6 +143,20 @@
 //           默认加载第一个歌单数据
             listClick(0)
         }
+
+        console.log('1111111111111')
+        $.ajax({
+            type: "POST",
+            url: apiUrl,
+            data: 'types=comments&id=' + 'A_PL_0_3779629',
+            dataType : "jsonp",
+            success: function(jsonData) {
+                console.log(jsonData)
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
     })
 
 //      获取url中的参数

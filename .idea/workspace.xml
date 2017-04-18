@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9b4d1cf6-79c6-45dd-8cf2-99a94d753bf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-<<<<<<< HEAD
-=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api.php" afterPath="$PROJECT_DIR$/api.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discover/RankList.html" afterPath="$PROJECT_DIR$/discover/RankList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discover/discover.html" afterPath="$PROJECT_DIR$/discover/discover.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.css" afterPath="$PROJECT_DIR$/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/data.js" afterPath="$PROJECT_DIR$/js/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vender-css/discover.css" afterPath="$PROJECT_DIR$/vender-css/discover.css" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/musicList.js" afterPath="$PROJECT_DIR$/js/musicList.js" />
     </list>
     <ignored path="WYMusic-H5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,13 +31,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="-15.75">
-              <caret line="73" column="52" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
-=======
             <state vertical-scroll-proportion="-3.8703704">
-              <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+              <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -50,47 +40,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.69579285">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-=======
-            <state vertical-scroll-proportion="0.68875">
-              <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+            <state vertical-scroll-proportion="-13.37037">
+              <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RankList.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RankList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/discover/RankList.html">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="-11.916667">
-              <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.6520052">
+              <caret line="148" column="25" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7764#7995#0" expanded="false" />
-                <element signature="e#8083#8590#0" expanded="false" />
-                <element signature="e#8596#8668#0" expanded="false" />
-                <marker date="1492392556000" expanded="true" signature="4949:5095" placeholder="..." />
-                <marker date="1492392556000" expanded="true" signature="4949:5135" placeholder="..." />
-                <marker date="1492392556000" expanded="true" signature="4949:5197" placeholder="..." />
-                <marker date="1492392556000" expanded="true" signature="4949:5269" placeholder="..." />
-                <marker date="1492392556000" expanded="true" signature="5001:5095" placeholder="..." />
-                <marker date="1492392556000" expanded="true" signature="8767:10165" placeholder="..." />
-=======
-            <state vertical-scroll-proportion="-1.2407408">
-              <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7849#8080#0" expanded="false" />
-                <element signature="e#8168#8675#0" expanded="false" />
-                <element signature="e#8681#8753#0" expanded="false" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+                <element signature="e#11587#11818#0" expanded="false" />
+                <element signature="e#11906#12413#0" expanded="false" />
+                <element signature="e#12419#12491#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,26 +68,9 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0">
-              <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
+            <state vertical-scroll-proportion="-8.518518">
+              <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="12" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="discover.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/discover/discover.html">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46991" column="14" selection-start-line="46991" selection-start-column="9" selection-end-line="46991" selection-end-column="14" />
-=======
-            <state vertical-scroll-proportion="1.5185186">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
-              <folding>
-                <marker date="1492350635000" expanded="true" signature="11550:12263" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -126,13 +78,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.css">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
-=======
-            <state vertical-scroll-proportion="-20.055555">
-              <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+            <state vertical-scroll-proportion="-5.9814816">
+              <caret line="426" column="21" selection-start-line="426" selection-start-column="21" selection-end-line="426" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -141,8 +88,8 @@
       <file leaf-file-name="discover.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7037036">
-              <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+            <state vertical-scroll-proportion="-5.462963">
+              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -151,12 +98,8 @@
       <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding />
-=======
-              <caret line="47716" column="33" selection-start-line="47716" selection-start-column="29" selection-end-line="47716" selection-end-column="33" />
+            <state vertical-scroll-proportion="-33.851852">
+              <caret line="79575" column="27" selection-start-line="79575" selection-start-column="27" selection-end-line="79575" selection-end-column="27" />
               <folding>
                 <element signature="e#66#2609#0" expanded="false" />
                 <element signature="e#2638#9124#0" expanded="false" />
@@ -166,10 +109,8 @@
                 <element signature="e#635403#1794267#0" expanded="false" />
                 <element signature="e#635417#641176#0" expanded="false" />
                 <element signature="e#1795359#1796523#0" expanded="false" />
-                <element signature="e#2533242#3253452#0" expanded="false" />
                 <element signature="e#3253458#3907341#0" expanded="false" />
               </folding>
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
             </state>
           </provider>
         </entry>
@@ -177,13 +118,8 @@
       <file leaf-file-name="rank-list.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vender-css/rank-list.css">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0">
-              <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-=======
             <state vertical-scroll-proportion="-13.37037">
-              <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+              <caret line="104" column="17" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -192,9 +128,11 @@
       <file leaf-file-name="musicList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/musicList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="-9.925926">
+              <caret line="128" column="53" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
+              <folding>
+                <marker date="1492432190000" expanded="true" signature="7447:7461" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,17 +158,17 @@
         <option value="$PROJECT_DIR$/data.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/css/discover.css" />
-        <option value="$PROJECT_DIR$/js/musicList.js" />
         <option value="$PROJECT_DIR$/js/ajax.js" />
-        <option value="$PROJECT_DIR$/api.php" />
         <option value="$PROJECT_DIR$/vender-css/rank-list.css" />
-        <option value="$PROJECT_DIR$/discover/RankList.html" />
         <option value="$PROJECT_DIR$/js/data.js" />
-        <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/vender-css/discover.css" />
-        <option value="$PROJECT_DIR$/discover/discover.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/discover/discover.html" />
+        <option value="$PROJECT_DIR$/js/musicList.js" />
+        <option value="$PROJECT_DIR$/index.css" />
+        <option value="$PROJECT_DIR$/api.php" />
+        <option value="$PROJECT_DIR$/discover/RankList.html" />
       </list>
     </option>
   </component>
@@ -241,13 +179,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-<<<<<<< HEAD
-    <option name="width" value="2048" />
-    <option name="height" value="1047" />
-=======
     <option name="width" value="1680" />
     <option name="height" value="947" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -418,29 +351,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-    <frame x="0" y="23" width="2048" height="1047" extended-state="6" />
-=======
     <frame x="0" y="23" width="1680" height="947" extended-state="6" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622664" sideWeight="0.49590644" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12865497" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622664" sideWeight="0.5040936" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -454,7 +383,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12865497" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -480,16 +409,9 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
-          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-=======
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
           </folding>
         </state>
       </provider>
@@ -502,84 +424,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/discover/RankList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7764#7995#0" expanded="false" />
-            <element signature="e#8083#8590#0" expanded="false" />
-            <element signature="e#8596#8668#0" expanded="false" />
-            <marker date="1492392556000" expanded="true" signature="4949:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5135" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5197" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5269" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="5001:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="8767:10165" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46991" column="14" selection-start-line="46991" selection-start-column="9" selection-end-line="46991" selection-end-column="14" />
-          <folding>
-            <element signature="e#66#2609#0" expanded="false" />
-            <element signature="e#2638#9124#0" expanded="false" />
-            <element signature="e#9152#11112#0" expanded="false" />
-            <element signature="e#11139#30474#0" expanded="false" />
-            <element signature="e#30501#634127#0" expanded="false" />
-            <element signature="e#635403#1794267#0" expanded="false" />
-            <element signature="e#635417#641176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vender-css/rank-list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/musicList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -604,21 +448,9 @@
           <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-<<<<<<< HEAD
-            <element signature="e#7764#7995#0" expanded="false" />
-            <element signature="e#8083#8590#0" expanded="false" />
-            <element signature="e#8596#8668#0" expanded="false" />
-            <marker date="1492392556000" expanded="true" signature="4949:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5135" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5197" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5269" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="5001:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="8767:10165" placeholder="..." />
-=======
-            <element signature="e#7849#8080#0" expanded="false" />
-            <element signature="e#8168#8675#0" expanded="false" />
-            <element signature="e#8681#8753#0" expanded="false" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+            <element signature="e#11587#11818#0" expanded="false" />
+            <element signature="e#11906#12413#0" expanded="false" />
+            <element signature="e#12419#12491#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,7 +468,6 @@
             <element signature="e#635403#1794267#0" expanded="false" />
             <element signature="e#635417#641176#0" expanded="false" />
             <element signature="e#1795359#1796523#0" expanded="false" />
-            <element signature="e#2533242#3253452#0" expanded="false" />
             <element signature="e#3253458#3907341#0" expanded="false" />
           </folding>
         </state>
@@ -646,12 +477,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-<<<<<<< HEAD
-=======
-          <folding>
-            <marker date="1492350635000" expanded="true" signature="11550:12263" placeholder="..." />
-          </folding>
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+          <folding />
         </state>
       </provider>
     </entry>
@@ -691,7 +517,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="19" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1492432190000" expanded="true" signature="7447:7461" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,21 +547,9 @@
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="32" selection-end-column="112" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-<<<<<<< HEAD
-            <element signature="e#7764#7995#0" expanded="false" />
-            <element signature="e#8083#8590#0" expanded="false" />
-            <element signature="e#8596#8668#0" expanded="false" />
-            <marker date="1492392556000" expanded="true" signature="4949:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5135" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5197" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5269" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="5001:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="8767:10165" placeholder="..." />
-=======
-            <element signature="e#7849#8080#0" expanded="false" />
-            <element signature="e#8168#8675#0" expanded="false" />
-            <element signature="e#8681#8753#0" expanded="false" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+            <element signature="e#11587#11818#0" expanded="false" />
+            <element signature="e#11906#12413#0" expanded="false" />
+            <element signature="e#12419#12491#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -774,7 +590,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-          <folding />
+          <folding>
+            <marker date="1492432190000" expanded="true" signature="7447:7461" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -792,12 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-<<<<<<< HEAD
-=======
-          <folding>
-            <marker date="1492350635000" expanded="true" signature="11550:12263" placeholder="..." />
-          </folding>
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+          <folding />
         </state>
       </provider>
     </entry>
@@ -807,21 +620,9 @@
           <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-<<<<<<< HEAD
-            <element signature="e#7764#7995#0" expanded="false" />
-            <element signature="e#8083#8590#0" expanded="false" />
-            <element signature="e#8596#8668#0" expanded="false" />
-            <marker date="1492392556000" expanded="true" signature="4949:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5135" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5197" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5269" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="5001:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="8767:10165" placeholder="..." />
-=======
-            <element signature="e#7849#8080#0" expanded="false" />
-            <element signature="e#8168#8675#0" expanded="false" />
-            <element signature="e#8681#8753#0" expanded="false" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+            <element signature="e#11587#11818#0" expanded="false" />
+            <element signature="e#11906#12413#0" expanded="false" />
+            <element signature="e#12419#12491#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -848,12 +649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-<<<<<<< HEAD
-=======
-          <folding>
-            <marker date="1492350635000" expanded="true" signature="11550:12263" placeholder="..." />
-          </folding>
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+          <folding />
         </state>
       </provider>
     </entry>
@@ -873,42 +669,14 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/discover/discover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9668508">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-=======
     <entry file="file://$PROJECT_DIR$/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/musicList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9154286">
-          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
-=======
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -920,28 +688,67 @@
     <entry file="file://$PROJECT_DIR$/vender-css/rank-list.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.37037">
-          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+          <caret line="104" column="17" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api.php">
+    <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0">
-          <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
+        <state vertical-scroll-proportion="-5.462963">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
           <folding />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8703704">
+          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.37037">
+          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discover/discover.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3706721">
+          <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/musicList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.925926">
+          <caret line="128" column="53" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
+          <folding>
+            <marker date="1492432190000" expanded="true" signature="7447:7461" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9814816">
+          <caret line="426" column="21" selection-start-line="426" selection-start-column="21" selection-end-line="426" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
-          <caret line="46991" column="14" selection-start-line="46991" selection-start-column="9" selection-end-line="46991" selection-end-column="14" />
-=======
-          <caret line="47716" column="33" selection-start-line="47716" selection-start-column="29" selection-end-line="47716" selection-end-column="33" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+        <state vertical-scroll-proportion="-33.851852">
+          <caret line="79575" column="27" selection-start-line="79575" selection-start-column="27" selection-end-line="79575" selection-end-column="27" />
           <folding>
             <element signature="e#66#2609#0" expanded="false" />
             <element signature="e#2638#9124#0" expanded="false" />
@@ -951,110 +758,29 @@
             <element signature="e#635403#1794267#0" expanded="false" />
             <element signature="e#635417#641176#0" expanded="false" />
             <element signature="e#1795359#1796523#0" expanded="false" />
-            <element signature="e#2533242#3253452#0" expanded="false" />
             <element signature="e#3253458#3907341#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
+    <entry file="file://$PROJECT_DIR$/api.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
-=======
-        <state vertical-scroll-proportion="-20.055555">
-          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
+        <state vertical-scroll-proportion="-8.518518">
+          <caret line="151" column="12" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0">
-          <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-=======
-        <state vertical-scroll-proportion="-3.7037036">
-          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discover/discover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5185186">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-          <folding>
-            <marker date="1492350635000" expanded="true" signature="11550:12263" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/discover/RankList.html">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="-11.916667">
-          <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.6520052">
+          <caret line="148" column="25" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7764#7995#0" expanded="false" />
-            <element signature="e#8083#8590#0" expanded="false" />
-            <element signature="e#8596#8668#0" expanded="false" />
-            <marker date="1492392556000" expanded="true" signature="4949:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5135" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5197" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="4949:5269" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="5001:5095" placeholder="..." />
-            <marker date="1492392556000" expanded="true" signature="8767:10165" placeholder="..." />
-=======
-        <state vertical-scroll-proportion="-1.2407408">
-          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7849#8080#0" expanded="false" />
-            <element signature="e#8168#8675#0" expanded="false" />
-            <element signature="e#8681#8753#0" expanded="false" />
+            <element signature="e#11587#11818#0" expanded="false" />
+            <element signature="e#11906#12413#0" expanded="false" />
+            <element signature="e#12419#12491#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8703704">
-          <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.75">
-          <caret line="73" column="52" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69579285">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68875">
-          <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
->>>>>>> 4a8473699f9314e319ea0045c472307cb5304c67
-          <folding />
         </state>
       </provider>
     </entry>
