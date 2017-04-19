@@ -124,8 +124,8 @@
 //    排行榜列表
     var topArray
 //    接口地址
-//    var apiUrl = 'http://192.168.1.115:8888/api.php'
-    var apiUrl = 'http://192.168.1.101:8888/api.php'
+    var apiUrl = 'http://192.168.1.114:8888/api.php'
+//    var apiUrl = 'http://192.168.1.101:8888/api.php'
     $(function () {
 //        更新榜单列表
         updataList()
@@ -236,7 +236,6 @@
         $('.g-title > p:first span').text(model.trackCount)
 //        收听
         $('.g-title > p:last span').text(model.playCount)
-
         $.ajax({
             type: "GET",
             url: apiUrl,

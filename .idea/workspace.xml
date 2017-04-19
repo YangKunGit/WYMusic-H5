@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b4d1cf6-79c6-45dd-8cf2-99a94d753bf9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api.php" afterPath="$PROJECT_DIR$/api.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discover/RankList.html" afterPath="$PROJECT_DIR$/discover/RankList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discover/discover.html" afterPath="$PROJECT_DIR$/discover/discover.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.css" afterPath="$PROJECT_DIR$/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/musicList.js" afterPath="$PROJECT_DIR$/js/musicList.js" />
     </list>
     <ignored path="WYMusic-H5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,13 +49,13 @@
       <file leaf-file-name="RankList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/discover/RankList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6520052">
-              <caret line="148" column="25" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.45924968">
+              <caret line="243" column="41" selection-start-line="243" selection-start-column="41" selection-end-line="243" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11587#11818#0" expanded="false" />
-                <element signature="e#11906#12413#0" expanded="false" />
-                <element signature="e#12419#12491#0" expanded="false" />
+                <element signature="e#11586#11817#0" expanded="false" />
+                <element signature="e#11905#12412#0" expanded="false" />
+                <element signature="e#12418#12490#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -88,8 +84,18 @@
       <file leaf-file-name="discover.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.462963">
+            <state vertical-scroll-proportion="23.925926">
               <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discover.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/discover/discover.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.4074073">
+              <caret line="168" column="46" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -164,10 +170,10 @@
         <option value="$PROJECT_DIR$/vender-css/discover.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/discover/discover.html" />
         <option value="$PROJECT_DIR$/js/musicList.js" />
         <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/api.php" />
+        <option value="$PROJECT_DIR$/discover/discover.html" />
         <option value="$PROJECT_DIR$/discover/RankList.html" />
       </list>
     </option>
@@ -448,9 +454,9 @@
           <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11587#11818#0" expanded="false" />
-            <element signature="e#11906#12413#0" expanded="false" />
-            <element signature="e#12419#12491#0" expanded="false" />
+            <element signature="e#11586#11817#0" expanded="false" />
+            <element signature="e#11905#12412#0" expanded="false" />
+            <element signature="e#12418#12490#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,9 +553,9 @@
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="32" selection-end-column="112" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11587#11818#0" expanded="false" />
-            <element signature="e#11906#12413#0" expanded="false" />
-            <element signature="e#12419#12491#0" expanded="false" />
+            <element signature="e#11586#11817#0" expanded="false" />
+            <element signature="e#11905#12412#0" expanded="false" />
+            <element signature="e#12418#12490#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -620,9 +626,9 @@
           <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11587#11818#0" expanded="false" />
-            <element signature="e#11906#12413#0" expanded="false" />
-            <element signature="e#12419#12491#0" expanded="false" />
+            <element signature="e#11586#11817#0" expanded="false" />
+            <element signature="e#11905#12412#0" expanded="false" />
+            <element signature="e#12418#12490#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.462963">
-          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8703704">
@@ -715,14 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.37037">
           <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discover/discover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3706721">
-          <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -771,15 +761,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="23.925926">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discover/discover.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4074073">
+          <caret line="168" column="46" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/discover/RankList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6520052">
-          <caret line="148" column="25" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.45924968">
+          <caret line="243" column="41" selection-start-line="243" selection-start-column="41" selection-end-line="243" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11587#11818#0" expanded="false" />
-            <element signature="e#11906#12413#0" expanded="false" />
-            <element signature="e#12419#12491#0" expanded="false" />
+            <element signature="e#11586#11817#0" expanded="false" />
+            <element signature="e#11905#12412#0" expanded="false" />
+            <element signature="e#12418#12490#0" expanded="false" />
           </folding>
         </state>
       </provider>
