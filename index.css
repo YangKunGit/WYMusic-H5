@@ -278,7 +278,7 @@ ul#main-menu li.active, ul#main-menu li.active a {
     position:fixed;
     width: 48px;
     height: 48px;
-    bottom:20px;
+    bottom:80px;
     right:20px;
     display: none;
 }
@@ -441,13 +441,222 @@ textarea.u-txt {
     position: fixed;
     _position: absolute;
     zoom: 1;
-    bottom: 0;
+    bottom: -39px;
     left: 0;
     right: 0;
-    height: 0;
     width: 100%;
     z-index: 1002;
+    height: 53px;
 }
+.hand {
+    position: absolute;
+    top: -9px;
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+}
+
+.play-bar, .g-bottomBar .updn .f-fl, .lock-btn, #g-player .btns a, .oper .icn, .oper .ctrl {
+    background: url(http://s2.music.126.net/style/web2/img/frame/playbar.png?97bb0fa1b5eace4d001d9f27e6fb0d95) no-repeat 0 9999px;
+}
+
+.play-bar {
+    height: 53px;
+    zoom: 1;
+    margin-right: 67px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+}
+
+.g-bottomBar .updn .left {
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 52px;
+    height: 62px;
+    background-position: 0 -380px;
+}
+.g-bottomBar .updn .right {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 15px;
+    height: 52px;
+    background-position: -52px -393px;
+    pointer-events: none;
+}
+.updn .left .lock-btn {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 9px 17px;
+}
+.m-playbar-unlock .updn .left .lock-btn {
+    background-position: -80px -380px;
+}
+
+.m-playbar-lock .updn .left .lock-btn {
+    background-position: -100px -380px;
+}
+
+#g-player {
+    z-index: 15;
+    width: 980px;
+    height: 47px;
+    margin: 6px auto 0 auto;
+}
+
+#g-player .btns, #g-player .btns a, .song-img, #g-player .play-ctrl {
+    float: left;
+}
+
+#g-player .btns {
+    width: 137px;
+    padding: 6px 0 0 0;
+    overflow: hidden;
+}
+#g-player .btns a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    text-indent: -9999px;
+    margin: 8px 8px 5px 0;
+}
+#g-player .btns a.prv {
+    background-position: 0 -130px;
+}
+#g-player .btns a.play {
+    background-position: 0 -204px;
+    margin: 3px 13px 3px 5px;
+    width: 35px;
+    height: 35px;
+}
+#g-player .btns a.next {
+    background-position: -80px -130px;
+}
+
+.song-img {
+    width: 34px;
+    height: 34px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#g-player .play-ctrl {
+    position: relative;
+    width: 608px;
+    height: 41px;
+    margin: 6px 15px;
+}
+
+#g-player .play-ctrl .words {
+    height: 28px;
+    overflow: hidden;
+    color: #e8e8e8;
+    text-shadow: 0 1px 0 #171717;
+    line-height: 28px;
+    font-size: 12px;
+}
+.f-thide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+#g-player .play-ctrl .words .name {
+    color: #e8e8e8;
+    max-width: 300px;
+}
+#g-player .play-ctrl .words .by {
+    max-width: 220px;
+    margin-left: 15px;
+    color: #9b9b9b;
+}
+
+.m-pbar .barbg, .m-pbar .rdy, .m-pbar .cur {
+    background: url("http://s2.music.126.net/style/web2/img/frame/statbar.png?404c0f800c72d4e4927e7c8c172b15bd") no-repeat 0 9999px;
+    height: 9px;
+}
+.m-pbar {
+    position: relative;
+}
+.m-pbar .barbg {
+    background-position: 0 0;
+    margin-top: -2px;
+    margin-right: 113px;
+}
+.m-pbar .rdy {
+    background-position: 0 -30px;
+}
+.m-pbar .cur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1%;
+    background-position: 0 -66px;
+}
+.m-pbar .btn {
+    background: url("http://s2.music.126.net/style/web2/img/iconall.png?52d65336ecb0f0898952e7af3e425cde") no-repeat 0 9999px;
+}
+.m-pbar .btn {
+    position: absolute;
+    top: -7px;
+    right: -13px;
+    width: 22px;
+    height: 24px;
+    margin-left: -11px;
+    background-position: 0 -250px;
+    _background-position: 0 0;
+}
+.m-pbar .time {
+    position: absolute;
+    top: -5px;
+    right: 21px;
+    color: #797979;
+    text-shadow: 0 1px 0 #121212;
+    font-size: 13px;
+}
+.m-pbar .time span {
+    color: #a1a1a1;
+}
+
+.oper .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 16px 8px 0 0;
+    text-indent: -9999px;
+}
+.oper .icn-add {
+    background-position: -88px -163px;
+}
+.oper .icn-share {
+    background-position: -114px -163px;
+}
+.oper .ctrl {
+    position: relative;
+    z-index: 10;
+    width: 113px;
+    padding-left: 13px;
+    background-position: -147px -238px;
+}
+.oper .icn-vol {
+    background-position: -2px -248px;
+}
+.oper .icn-loop {
+    background-position: -3px -344px;
+}
+.oper .icn-list {
+    display: inline-block;
+    float: none;
+    width: 28px;
+    padding-left: 21px;
+    background-position: -42px -68px;
+    margin-right: 0;
+
+}
+
+
 
 
 

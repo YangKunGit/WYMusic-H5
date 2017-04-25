@@ -15,6 +15,9 @@ $(function () {
     labelClickFun(0)
     startInit('discover-box', 700)
 
+    //playBar
+    playBarCtrol()
+
     window.onhashchange = function () {
         console.log('加载')
         var hash = location.hash;
@@ -183,4 +186,31 @@ function startInit(iframeId, minHeight) {
     window.setInterval(function () {
         reinitIframe(iframeId, minHeight)
     }, 200)
+}
+
+var tn
+function playBarCtrol() {
+    console.log('$$$$$$$$$$$$$')
+    var bar =  $('.g-bottomBar')
+    bar.hover(function () {
+        clearTimeout(tn)
+        bar.animate({
+            bottom: '0px'
+        })
+    }, function () {
+        if (bar.hasClass('m-playbar-unlock')) {
+            tn = setTimeout(function () {
+                bar.animate({
+                    bottom: '-39px'
+                }, 'slow')
+            }, 5000)
+        }
+    })
+
+//    锁定playbar
+    $('.lock-btn').click(function () {
+        var bar = $('.g-bottomBar')
+        bar.toggleClass('m-playbar-unlock')
+        bar.toggleClass('m-playbar-lock')
+    })
 }

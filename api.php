@@ -30,7 +30,8 @@ function curl($url, $post_data){ //从网易云音乐读取数据
         'Origin: http://music.163.com',
         'User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36',
         'Content-Type: application/x-www-form-urlencoded',
-        'Referer: http://music.163.com/search/',
+        'Referer: http://music.163.com/',
+        'Cookie: appver=1.5.6;'
     );
     curl_setopt($curl, CURLOPT_URL,$url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -148,7 +149,15 @@ switch($types)
          $post_data = '';
          echojson(curl($url,$post_data));
          break;
+    case "banner":
+	     $csrf_token = getParam('csrf_token','')
+         $url= "http://music.163.com/api/v2/banner/get?csrf_token=($csrf_token)";    //请求url
+         echo($url)
+         $post_data = '';
+         echojson(curl($url,$post_data));
+         break;
     case "search":  //搜索歌曲
+    	 break;
     default:
         $s = getParam('name');  //歌名
         $limit = getParam('count');  //每页显示数量
@@ -158,8 +167,8 @@ switch($types)
         $offset= ($pages-1) * $limit;     //偏移量
         
         if(!$s){
-            $tempArr = array("code"=>-1,"msg"=>"歌名为空");
-            echojson(json_encode($tempArr));
+            $tempArr = array("code"=>-1,"msg"=>"歌名为空111");
+//             echojson(json_encode($tempArr));
         }else{
             $url= "http://music.163.com/api/search/get/web?csrf_token=";    //请求url
             $post_data = 'hlpretag=<span class="s-fc7">&hlposttag=</span>&s='. $s . '&type=1&offset='. $offset . '&total=true&limit=' . $limit;

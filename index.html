@@ -92,9 +92,53 @@
 <!--top-btn-->
 <a href="#" class="scrollup"><span class="glyphicon glyphicon-chevron-up"></span></a>
 <!--播放器 player-->
-<div class="g-bottomBar">
-    
+<div class="g-bottomBar m-playbar-unlock">
+    <div class="hand"></div>
+    <div class="play-bar">
+        <div id="g-player">
+            <div class="btns">
+                <a href="javascript:;" class="prv" title="上一首(ctrl+←)"></a>
+                <a href="javascript:;" class="play" title="播放/暂停(p)"></a>
+                <a href="javascript:;" class="next" title="下一首(ctrl+→)"></a>
+            </div>
+            <div class="song-img">
+                <img src="http://p3.music.126.net/bARV4ZiYwNpoaZTyhtEwLg==/18679603046750668.jpg?param=34y34" alt="">
+            </div>
+            <div class="play-ctrl">
+                <div class="words">
+                    <a href="" hidefocus="true" class="name f-thide">暧昧</a>
+                    <span class="by f-thide">薛之谦</span>
+                </div>
+                <div class="m-pbar">
+                    <div class="barbg">
+                        <div class="rdy"></div>
+                        <div class="cur">
+                            <span class="btn"></span>
+                        </div>
+                    </div>
+                    <div class="time"><span>01:33</span> / 03:43</div>
+                </div>
+            </div>
+            <div class="oper">
+                <a href="javascript:;" class="icn icn-add" title="收藏"></a>
+                <a href="javascript:;" class="icn icn-share" title="分享"></a>
+                <!--<div class="ctrl">-->
+                    <a href="javascript:;" class="icn icn-vol" title="音量"></a>
+                    <a href="javascript:;" class="icn icn-loop" title="循环"></a>
+                    <a href="javascript:;" class="icn icn-list" title="播放列表"></a>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <div class="updn">
+        <div class="f-fl left">
+            <a href="javascript:;" class="lock-btn"></a>
+        </div>
+        <div class="f-fl right"></div>
+    </div>
 </div>
+<!--播放器-->
+<audio id="music" src="" @timeupdate="updateTime" ended="playContinue" autoplay></audio>
 
 
 <script src="./venders-js/jquery-3.2.0.min.js"></script>

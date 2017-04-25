@@ -26,7 +26,7 @@
                                 <h2 class="toplist-name"></h2>
                                 <p><i class="fa fa-clock-o"></i> 最近更新：<span>04月11日</span> <i style="font-size: 12px" class="fa-icon update-f">（每天更新）</i></p>
                                 <div class="btn-group open">
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-play-circle-o"></i> 播放</a>
+                                    <a class="btn btn-primary play-btn" href="#"><i class="fa fa-play-circle-o"></i> 播放</a>
                                     <a class="btn btn-primary" href="#"><span class="fa fa-plus"></span></a>
                                 </div>
                                 <a href="#" class="btn btn-default"><i class="fa fa-cube fa-icon"></i><span class="collection"></span></a>
@@ -124,9 +124,9 @@
 //    排行榜列表
     var topArray
 //    接口地址
-    var apiUrl = 'http://192.168.1.114:8888/api.php'
-//    var apiUrl = 'http://192.168.1.101:8888/api.php'
-    $(function () {
+//    var apiUrl = 'http://192.168.1.115:8888/api.php'
+    var apiUrl = 'http://192.168.1.101:8888/api.php'
+//    $(function () {
 //        更新榜单列表
         updataList()
 
@@ -144,19 +144,22 @@
             listClick(0)
         }
 
-        console.log('1111111111111')
-        $.ajax({
-            type: "POST",
-            url: apiUrl,
-            data: 'types=comments&id=' + 'A_PL_0_3779629',
-            dataType : "jsonp",
-            success: function(jsonData) {
-                console.log(jsonData)
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        })
+       $('.play-btn').click(function () {
+           console.log('1111111111111')
+           $.ajax({
+               type: "GET",
+               url: apiUrl,
+               data: 'types=banner',
+               dataType : "jsonp",
+               success: function(jsonData) {
+                   console.log('打印返回值')
+                   console.log(jsonData)
+               },
+               error: function (error) {
+                   console.log(error)
+               }
+           })
+       })
     })
 
 //      获取url中的参数
@@ -164,7 +167,6 @@
         if (window.location.search) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
-            console.log(decodeURI(r[2]))
             if (r != null) return decodeURI(r[2]);
         }
     }
@@ -211,7 +213,6 @@
             } else  {
                 index = $(this).index() + 4
             }
-            console.log($(this).index())
             listClick(index)
         })
     }
@@ -229,7 +230,6 @@
 //        更新日期
         var updatehz = model.updateFrequency
         $('.update-f').text(updatehz)
-        console.log(updatehz)
         var update = $('.toplist-header-msg p span')
         update.text(format(model.updateTime))
 //        数量
@@ -242,7 +242,6 @@
             data: 'types=playlist&id=' + topArray[index].id,
             dataType : "jsonp",
             success: function(jsonData) {
-                console.log(jsonData)
                 updataContent(jsonData.result)
             },
             error: function (error) {
