@@ -218,6 +218,7 @@ ul#main-menu li.active, ul#main-menu li.active a {
 }
 .g-mnl {
     margin-left: 252px;
+    border-left: 1px solid #d3d3d3;
 }
 .g-wrap {
     padding: 20px 20px 40px;
@@ -345,7 +346,7 @@ a.scrollup span:hover {
 }
 
 
-/* comment */
+/* comment 评论*/
 #comment-box {
     margin-top: 40px;
 }
@@ -356,7 +357,7 @@ a.scrollup span:hover {
     float: left;
     width: 50px;
     height: 50px;
-    margin-right: -100px;
+    /*margin-right: -100px;*/
 }
 .m-cmmt .m-cmmtipt {
     margin-left: 70px;
@@ -377,6 +378,7 @@ textarea.u-txt {
 .m-cmmtipt .area {
     height: 50px;
     box-sizing: content-box;
+    outline: none;
 }
 .u-txtwrap {
     position: relative;
@@ -419,7 +421,7 @@ textarea.u-txt {
     padding: 3px 6px;
 }
 .comment-list h4 {
-    font-size: 1em;
+    font-size: 13px;
 }
 .comment-list ul li {
     border-top: 1px solid gainsboro;
@@ -429,7 +431,98 @@ textarea.u-txt {
 .comment-list ul {
     padding: 0;
 }
-
+.comment-list .cutwrap {
+    margin-left: 70px;
+}
+.comment-list .f-brk {
+    font-size: 12px;
+}
+.comment-list .f-brk > a {
+    color: #337ab7;
+}
+.comment-list .que {
+    padding: 8px 20px;
+    margin-top: 10px;
+    background-color: #F4F4F4;
+    border: 1px solid #dadada;
+    position: relative;
+}
+.comment-list .que:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: -5px;
+    left: 24px;
+    transform: rotate(-45deg);
+    border-top: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    background: #F4F4F4;
+    z-index: 2;
+}
+.comment-list .rp {
+    margin-top: 13px;
+    text-align: right;
+    font-size: 13px;
+}
+.comment-list .rp .time {
+    float: left;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.comment-list .rp a {
+    color: #2080C3;
+    font-size: 13px;
+    padding: 0 5px;
+}
+.comment-list .rp a:last-of-type {
+    color: #747474;
+}
+.comment-list .rp span {
+    color: #dedede;
+}
+.comment-list .rp span:last-child {
+    color: #353535;
+}
+#comment-box .pagination {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#comment-box .pagination>li>a {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin: 4px;
+    color: #000;
+    border-radius: 2px;
+}
+#comment-box .pagination > li > span {
+    border: none;
+    padding: 0;
+    line-height: 32px;
+    color: #000;
+}
+#comment-box .pagination > li > span:hover {
+    background-color: #fff;
+}
+#comment-box .pagination > li.active > a, #comment-box .pagination > li.active > span {
+    background-color: #D10100;
+    color: #fff;
+    border: none;
+}
+#comment-box .pagination > li > a:hover, #comment-box .pagination > li >a:focus {
+    border: 1px solid #000;
+    background-color: #fff;
+}
+#comment-box .pagination > li.active > a:hover, #comment-box .pagination > li.active > a:focus {
+    border: none;
+    background-color: #D10100;
+}
+#comment-box .pagination>.disabled>a, #comment-box .pagination>.disabled>a:focus, #comment-box .pagination>.disabled>a:hover, #comment-box .pagination>.disabled>span, #comment-box .pagination>.disabled>span:focus, #comment-box .pagination>.disabled>span:hover {
+    background-color: #ECECEC;
+    border: none;
+    color: #afafaf;
+}
 
 
 
@@ -662,6 +755,11 @@ textarea.u-txt {
 
 
 /*media 媒体查询*/
+@media (max-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
 @media (min-width: 768px) {
     ul#main-menu li.active:after {
         content: '\f0d8';
