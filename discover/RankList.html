@@ -59,7 +59,7 @@
                             <div id="comment-box">
                                 <div class="g-title">
                                     <h3>评论</h3>
-                                    <p>共<span class="">134513</span>条评论</p>
+                                    <p>共<span class="c-num">0</span>条评论</p>
                                     <p></p>
                                 </div>
                                 <div class="m-cmmt">
@@ -84,21 +84,13 @@
                                     </div>
                                     <div class="comment-list">
                                         <h4>精彩评论</h4>
-                                        <ul>
-                                            <li>
-                                                <div class="head">
-                                                    <img src="http://p1.music.126.net/GkAM6BssIVaFX921uE1KFA==/1410673420308662.jpg?param=50y50" alt="">
-                                                </div>
-                                                <div class="f-brk cnt"></div>
-                                                <div class="f-brk que"></div>
-                                            </li>
-                                        </ul>
-                                        <h4>最新评论(24132)</h4>
-                                        <ul>
-                                            <li></li>
-                                        </ul>
+                                        <ul id="hot-comments"></ul>
+                                        <h4>最新评论(<span class="c-num">0</span>)</h4>
+                                        <ul id="comments"></ul>
                                     </div>
                                 </div>
+                                <ul class="pagination">
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -120,13 +112,21 @@
 
 <script src="../venders-js/jquery-3.2.0.min.js"></script>
 <script src="../js/data.js"></script>
+<script src="../js/play.js"></script>
 <script>
-//    排行榜列表
-    var topArray
 //    接口地址
 //    var apiUrl = 'http://192.168.1.115:8888/api.php'
     var apiUrl = 'http://192.168.1.101:8888/api.php'
 //    $(function () {
+//    排行榜列表
+var topArray
+//    当前歌单
+var toplistIndex = 0
+//    每页评论数量
+    var count = 20
+//    当前页数
+    var page = 1
+    $(function () {
 //        更新榜单列表
         updataList()
 
@@ -141,25 +141,21 @@
             }
         } else {
 //           默认加载第一个歌单数据
-            listClick(0)
+            listClick()
         }
 
-       $('.play-btn').click(function () {
-           console.log('1111111111111')
-           $.ajax({
-               type: "GET",
-               url: apiUrl,
-               data: 'types=banner',
-               dataType : "jsonp",
-               success: function(jsonData) {
-                   console.log('打印返回值')
-                   console.log(jsonData)
-               },
-               error: function (error) {
-                   console.log(error)
-               }
-           })
-       })
+//         点击播放
+        $('.g-list tbody tr td.w2 .tt i').click(function () {
+            console.log('1111111')
+            $(this).toggleClass('active')
+            console.log($(this).parents('tr').index())
+            song = {
+                name: topArray[toplistIndex],
+                singer: '',
+                coverImgUrl: '',
+                id: ''
+            }
+        })
     })
 
 //      获取url中的参数
@@ -188,6 +184,7 @@
                 name: list[index].name,                     //  歌单名
                 id: list[index].id,                         //  id
                 updateFrequency: list[index].updateFrequency,   //  更新周期
+                commentThreadId: list[index].commentThreadId    //  评论id
             }
 //            标签
             var element = '<li> ' +
@@ -207,19 +204,21 @@
 
 //        歌单列表的点击方法
         $('.rank-list-slide li').click(function () {
-            var index
+            var ind
             if ($(this).parent().hasClass('rank-tese-list')) {
-                index = $(this).index()
+                ind = $(this).index()
             } else  {
-                index = $(this).index() + 4
+                ind = $(this).index() + 4
             }
-            listClick(index)
+            toplistIndex = ind
+            listClick()
         })
     }
 
-//
-    function listClick(index) {
-        var model = topArray[index]
+//  切换歌单
+    function listClick() {
+        page = 1
+        var model = topArray[toplistIndex]
 //        更新表头
         $('.toplist-name').text(model.name)
 //        歌单图片
@@ -231,18 +230,39 @@
         var updatehz = model.updateFrequency
         $('.update-f').text(updatehz)
         var update = $('.toplist-header-msg p span')
-        update.text(format(model.updateTime))
+        var time = new Date(model.updateTime)
+        update.text(time.Format('MM-dd'))
 //        数量
         $('.g-title > p:first span').text(model.trackCount)
 //        收听
         $('.g-title > p:last span').text(model.playCount)
+<<<<<<< HEAD
+=======
+
+//        歌单列表数据请求
+>>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
         $.ajax({
             type: "GET",
             url: apiUrl,
-            data: 'types=playlist&id=' + topArray[index].id,
+            data: 'types=playlist&id=' + topArray[toplistIndex].id,
             dataType : "jsonp",
             success: function(jsonData) {
                 updataContent(jsonData.result)
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+
+//        歌单评论数据请求
+        $.ajax({
+            type: "GET",
+            url: apiUrl,
+            data: 'types=comments&commentid=' + topArray[toplistIndex].commentThreadId + '&pages=' + page + '&count=' + count,
+            dataType : "jsonp",
+            success: function(jsonData) {
+                commentPage(jsonData, true)
+                updataComments(jsonData)
             },
             error: function (error) {
                 console.log(error)
@@ -316,6 +336,120 @@
         }
     }
 
+    function commentPage(jsonData, isRest) {
+        var indexList = $('.pagination')
+        indexList.empty()
+        if (isRest) {
+            //        更多
+            if (jsonData.more) {
+                indexList.append('<li class="' + (page == 1 ? 'disabled' : '') + ' pre"><a href="javascript:;">&laquo;上一页</a></li>')
+                if (parseInt(jsonData.total / count) > 8) {
+                    for (var i = 0; i < 8; i++) {
+                        var element = '<li class="' + (i == (page - 1) ? 'active' : '') + '"><a href="javascript:;">' + (i + 1) + '</a></li>'
+                        indexList.append(element)
+                    }
+                    var lastEle = '<li><span>...</span></li><li class="last' + (page == Math.ceil(jsonData.total / count) ? ' active' : '') + '"><a href="javascript:;">' + (Math.ceil(jsonData.total / count)) + '</a></li>'
+                    indexList.append(lastEle)
+                } else {
+                    for (var i = 0; i < Math.ceil(jsonData.total / count); i++) {
+                        var element = '<li class="' + (i == (page - 1) ? 'active' : '') + '"><a href="javascript:;">' + (i + 1) + '</a></li>'
+                        indexList.append(element)
+                    }
+                }
+                indexList.append('<li class="' + (page == Math.ceil(jsonData.total / count) ? 'disabled' : '') + ' next"><a href="javascript:;">下一页&raquo;</a></li>')
+            } else {
+                indexList.hide()
+            }
+//            TODO  当点击展示的最后一页时应该变幻页码的数量
+            indexList.find('li a').click(function () {
+               if ($(this).parent().is('.pre')) {
+                    if ($(this).parent().is('.disabled')) return
+                    $(this).parent().siblings('.active').prev().addClass('active')
+                    $(this).parent().siblings().removeClass('active')
+                    page--
+                } else if ($(this).parent().is('.next')) {
+                    if ($(this).parent().is('.disabled')) return
+                    $(this).parent().siblings('.active').next().addClass('active')
+                    $(this).parent().siblings().removeClass('active')
+                    page++
+                } else {
+                    $(this).parent().siblings().removeClass('active')
+                    $(this).parent().addClass('active')
+                    page = $(this).text()
+                }
+                $.ajax({
+                    type: "GET",
+                    url: apiUrl,
+                    data: 'types=comments&commentid=' + topArray[toplistIndex].commentThreadId + '&pages=' + page + '&count=' + count,
+                    dataType : "jsonp",
+                    success: function(jsonData) {
+                        commentPage(jsonData, true)
+                        updataComments(jsonData)
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+            })
+        }
+
+    }
+
+//      更新歌单评论列表
+    function updataComments(result) {
+        var commentsNum = result.total      //  评论总数
+        var comments = result.comments      //  评论列表
+        var hotComments = result.hotComments    //  热评
+        var hotlist = $('#hot-comments')
+        var commentlist = $('#comments')
+//
+        $('.c-num').text(commentsNum)
+//        清空列表
+        hotlist.empty()
+        commentlist.empty()
+//       热评列表
+        if (hotComments &&  hotComments.length > 0) {
+            createCommentEle(hotComments, hotlist)
+            $('.comment-list h4:first-of-type').show()
+        } else {
+            $('.comment-list h4:first-of-type').hide()
+        }
+//        最新评论
+        comments.length > 0 ? createCommentEle(comments, commentlist) : $('.comment-list h4:last-of-type').hide()
+    }
+
+//      创建评论列表标签元素
+    function createCommentEle(list, ele) {
+        for (var i = 0; i < list.length; i++) {
+            var obj = list[i]
+            var beReplied = ''
+            if (obj.beReplied.length > 0) {
+                beReplied = '<div class="f-brk que"> ' +
+                        '<a href="">' + obj.beReplied[0].user.nickname + '</a>: <span>' + obj.beReplied[0].content + '</span> ' +
+                        '</div> '
+            }
+            var time = new Date(obj.time)
+            var element = '<li> ' +
+                    '<div class="head"> ' +
+                    '<img src="' + obj.user.avatarUrl + '?param=50y50" alt=""> ' +
+                    '</div> ' +
+                    '<div class="cutwrap"> ' +
+                    '<div class="f-brk cnt"> ' +
+                    '<a href="">' + obj.user.nickname +'</a>: <span>' + obj.content + '</span> ' +
+                    '</div> ' + beReplied +
+                    '<div class="rp"> ' +
+                    '<p class="time">' + diffTime(time) + '</p> ' +
+                    '<a href="javascript:;"> ' +
+                    '<i class="fa fa-thumbs-o-up"></i> <span>(' + obj.likedCount + ')</span> ' +
+                    '</a> ' +
+                    '<span>|</span> ' +
+                    '<a href="javascript:;">回复</a> ' +
+                    '</div> ' +
+                    '</div></li>'
+            ele.append(element)
+        }
+    }
+
 //    计算毫秒为00:00格式
     function compluteTime(seconds) {
         seconds = Math.floor(seconds / 1000)
@@ -324,21 +458,8 @@
         return (add0(min) + ':' + add0(second))
     }
 
-    function add0(m) {
+    function add0(m){
         return m < 10 ? '0' + m : m
-    }
-
-//    将时间戳转成日期格式
-    function format(shijianchuo) {
-    //  shijianchuo是整数，否则要parseInt转换
-        var time = new Date(shijianchuo);
-        var y = time.getFullYear()
-        var m = time.getMonth()+1
-        var d = time.getDate()
-        var h = time.getHours()
-        var mm = time.getMinutes()
-        var s = time.getSeconds()
-        return add0(m) + '-' + add0(d)
     }
 
 //    两个时间戳的时间差
@@ -357,9 +478,33 @@
 //计算相差秒数
         var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
         var seconds = Math.round(leave3 / 1000)
-        console.log(" 相差 " + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒")
-        return days
+        if (days > 1) {
+            return date1.Format('MM月dd日 hh:mm')
+        } else if (days === 1) {
+            return date1.Format('昨天 hh:mm')
+        } else if (days < 1 && hours > 1) {
+            return date1.Format('hh:mm')
+        } else {
+            return date1.Format('mm分钟前')
+        }
     }
+
+//    将时间戳转成日期格式
+Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
 </script>
 </body>
 </html>

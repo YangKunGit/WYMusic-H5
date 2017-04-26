@@ -183,6 +183,9 @@ td.td-pad2 .tt i {
 .tt i:hover {
     color: #6f6f6f;
 }
+.tt i.active, .tt i.active:hover {
+    color: #D80200;
+}
 td.td-pad2 .song-name {
     padding: 15px 0;
 }
