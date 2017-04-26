@@ -119,8 +119,11 @@
 //    var apiUrl = 'http://192.168.1.101:8888/api.php'
 //    排行榜列表
 var topArray
-//    当前歌单
+//    当前歌单下标
 var toplistIndex = 0
+//      歌单列表
+var tracksList
+
 //    每页评论数量
     var count = 20
 //    当前页数
@@ -142,19 +145,6 @@ var toplistIndex = 0
 //           默认加载第一个歌单数据
             listClick()
         }
-
-//         点击播放
-        $('.g-list tbody tr td.w2 .tt i').click(function () {
-            console.log('1111111')
-            $(this).toggleClass('active')
-            console.log($(this).parents('tr').index())
-            song = {
-                name: topArray[toplistIndex],
-                singer: '',
-                coverImgUrl: '',
-                id: ''
-            }
-        })
     })
 
 //      获取url中的参数
@@ -268,6 +258,7 @@ var toplistIndex = 0
 
 //    加载歌单列表
     function updataContent(result) {
+        tracksList = result.tracks
         var shareNum = result.shareCount            //  分享数
         var commentNum = result.commentCount        //  评论数
         var tracks = result.tracks                  //  歌单列表
@@ -295,14 +286,13 @@ var toplistIndex = 0
                 }
             }
             var uicon = ''
-//            TODO  图标排版仍存在问题
             if (obj.lastRank) {
                 if ((parseInt(index) + 1) == parseInt(obj.lastRank)) {
                     uicon = '<i>- 0</i>'
                 } else if ((parseInt(index) + 1) > parseInt(obj.lastRank)) {
-                    uicon = '<i class="u-icn up-icon"><span>' + ((parseInt(index) + 1) - parseInt(obj.lastRank)) + '</span></i>'
+                    uicon = '<i class="u-icn up-icon"></i><span>' + ((parseInt(index) + 1) - parseInt(obj.lastRank)) + '</span>'
                 } else {
-                    uicon = '<i class="down-icon u-icn"><span>' + (parseInt(obj.lastRank) - (parseInt(index) + 1)) + '</span></i>'
+                    uicon = '<i class="down-icon u-icn"></i><span>' + (parseInt(obj.lastRank) - (parseInt(index) + 1)) + '</span>'
                 }
             } else {
                 uicon = '<i class="u-icn new-icon"></i>'
@@ -330,6 +320,20 @@ var toplistIndex = 0
                     '<td class="g-msg w1 ' + (index < 3 ? 'td-pad4' : '') + '"><a>' + obj.artists[num].name + '</a></td> </tr>'
             rankDIV.append(element)
         }
+
+        //         点击播放
+        $('.g-list tbody tr td.w2 .tt i').click(function () {
+            $(this).parents('tr').siblings().find('.tt i').removeClass('active')
+            $(this).addClass('active')
+            var songObj = tracksList[$(this).parents('tr').index()]
+            song = {
+                name: songObj.name,
+                singer: songObj.artists[0].name,
+                coverImgUrl: songObj.album.picUrl,
+                id: songObj.id,
+                url: songObj.mp3Url
+            }
+        })
     }
 
     function commentPage(jsonData, isRest) {

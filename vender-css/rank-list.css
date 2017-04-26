@@ -149,11 +149,13 @@ td.td-pad1 .g-rank {
     text-align: right;
 }
 .g-rank i {
-    width: 16px;
-    height: 17px;
-    margin: 0 auto;
-    display: block;
+    width: 9px;
+    height: 13px;
+    display: inline-block;
     padding-left: 0;
+}
+.g-rank i.new-icon {
+    width: 18px;
 }
 
 td.td-pad2 {
