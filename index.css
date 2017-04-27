@@ -587,9 +587,14 @@ textarea.u-txt {
 .m-playbar-unlock .updn .left .lock-btn {
     background-position: -80px -380px;
 }
-
+.m-playbar-unlock .updn .left .lock-btn:hover {
+    background-position: -80px -400px;
+}
 .m-playbar-lock .updn .left .lock-btn {
     background-position: -100px -380px;
+}
+.m-playbar-lock .updn .left .lock-btn:hover {
+    background-position: -100px -400px;
 }
 
 #g-player {
@@ -677,6 +682,7 @@ textarea.u-txt {
     background-position: 0 0;
     margin-top: -2px;
     margin-right: 113px;
+    position: relative;
 }
 .m-pbar .rdy {
     background-position: 0 -30px;
@@ -704,7 +710,7 @@ textarea.u-txt {
 .m-pbar .time {
     position: absolute;
     top: -5px;
-    right: 21px;
+    right: 3px;
     color: #797979;
     text-shadow: 0 1px 0 #121212;
     font-size: 13px;
@@ -738,6 +744,21 @@ textarea.u-txt {
 }
 .oper .icn-loop {
     background-position: -3px -344px;
+}
+.oper .icn-loop:hover {
+    background-position: -33px -344px;
+}
+.oper .icn-shuffle {
+    background-position: -66px -248px;
+}
+.oper .icn-shuffle:hover {
+    background-position: -93px -248px;
+}
+.oper .icn-one {
+    background-position: -66px -344px;
+}
+.oper .icn-one:hover {
+    background-position: -93px -344px;
 }
 .oper .icn-list {
     display: inline-block;

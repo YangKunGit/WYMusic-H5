@@ -318,8 +318,6 @@
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discover/RankList.html" afterPath="$PROJECT_DIR$/discover/RankList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.css" afterPath="$PROJECT_DIR$/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/play.js" afterPath="$PROJECT_DIR$/js/play.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vender-css/rank-list.css" afterPath="$PROJECT_DIR$/vender-css/rank-list.css" />
     </list>
     <ignored path="WYMusic-H5.iws" />
@@ -345,10 +343,14 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.38480696">
               <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
 =======
             <state vertical-scroll-proportion="-6.2352943">
+=======
+            <state vertical-scroll-proportion="0.0">
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
               <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
               <folding>
@@ -369,7 +371,7 @@
       <file leaf-file-name="play.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#36#0" expanded="false" />
@@ -410,14 +412,11 @@
       <file leaf-file-name="RankList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/discover/RankList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.625222">
-              <caret line="147" column="32" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6564626">
+              <caret line="330" column="48" selection-start-line="330" selection-start-column="48" selection-end-line="330" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7240#7484#0" expanded="false" />
-                <element signature="e#11723#11954#0" expanded="false" />
-                <element signature="e#12042#12549#0" expanded="false" />
-                <element signature="e#12555#12627#0" expanded="false" />
+                <element signature="e#11402#11633#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -426,7 +425,7 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9803922">
+            <state vertical-scroll-proportion="0.0">
               <caret line="759" column="21" selection-start-line="759" selection-start-column="21" selection-end-line="759" selection-end-column="21" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
               <folding />
@@ -447,8 +446,8 @@
       <file leaf-file-name="rank-list.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vender-css/rank-list.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8431373">
-              <caret line="186" column="18" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="148" column="22" selection-start-line="148" selection-start-column="22" selection-end-line="148" selection-end-column="22" />
               <folding />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
             </state>
@@ -473,8 +472,12 @@
         <entry file="file://$PROJECT_DIR$/discover/discover.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <state vertical-scroll-proportion="-0.625">
+=======
+            <state vertical-scroll-proportion="0.0">
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
               <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
               <folding />
             </state>
@@ -572,9 +575,12 @@
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.css" />
-        <option value="$PROJECT_DIR$/vender-css/rank-list.css" />
         <option value="$PROJECT_DIR$/js/play.js" />
+<<<<<<< HEAD
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
+=======
+        <option value="$PROJECT_DIR$/vender-css/rank-list.css" />
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
         <option value="$PROJECT_DIR$/discover/RankList.html" />
       </list>
     </option>
@@ -585,7 +591,6 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="948" />
@@ -616,10 +621,14 @@
     </navigator>
     <panes>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <pane id="Scope" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
+=======
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -776,6 +785,7 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="0" y="23" width="1680" height="948" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -788,8 +798,14 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13616182" sideWeight="0.5529595" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33055267" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
+=======
+    <frame x="0" y="23" width="2048" height="1051" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13616182" sideWeight="0.54422474" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20187305" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
@@ -797,7 +813,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622664" sideWeight="0.5081585" order="2" side_tool="true" content_ui="tabs" />
 =======
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19354838" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13616182" sideWeight="0.4470405" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13616182" sideWeight="0.45577523" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -806,6 +822,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20187305" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -853,10 +870,7 @@
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
 =======
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7240#7484#0" expanded="false" />
-            <element signature="e#11723#11954#0" expanded="false" />
-            <element signature="e#12042#12549#0" expanded="false" />
-            <element signature="e#12555#12627#0" expanded="false" />
+            <element signature="e#11402#11633#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -915,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="128" column="53" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,6 +976,7 @@
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="e#11552#11783#0" expanded="false" />
             <element signature="e#11871#12378#0" expanded="false" />
             <element signature="e#12384#12456#0" expanded="false" />
@@ -972,6 +986,9 @@
             <element signature="e#12042#12549#0" expanded="false" />
             <element signature="e#12555#12627#0" expanded="false" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
+=======
+            <element signature="e#11402#11633#0" expanded="false" />
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
           </folding>
         </state>
       </provider>
@@ -1036,9 +1053,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="19" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="19" />
+<<<<<<< HEAD
           <folding>
             <marker date="1492432190000" expanded="true" signature="7447:7461" placeholder="..." />
           </folding>
+=======
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
         </state>
       </provider>
     </entry>
@@ -1067,6 +1087,7 @@
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="e#11552#11783#0" expanded="false" />
             <element signature="e#11871#12378#0" expanded="false" />
             <element signature="e#12384#12456#0" expanded="false" />
@@ -1076,6 +1097,9 @@
             <element signature="e#12042#12549#0" expanded="false" />
             <element signature="e#12555#12627#0" expanded="false" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
+=======
+            <element signature="e#11402#11633#0" expanded="false" />
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
           </folding>
         </state>
       </provider>
@@ -1115,9 +1139,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+<<<<<<< HEAD
           <folding>
             <marker date="1492432190000" expanded="true" signature="7447:7461" placeholder="..." />
           </folding>
+=======
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
         </state>
       </provider>
     </entry>
@@ -1146,6 +1173,7 @@
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="e#11552#11783#0" expanded="false" />
             <element signature="e#11871#12378#0" expanded="false" />
             <element signature="e#12384#12456#0" expanded="false" />
@@ -1155,6 +1183,9 @@
             <element signature="e#12042#12549#0" expanded="false" />
             <element signature="e#12555#12627#0" expanded="false" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
+=======
+            <element signature="e#11402#11633#0" expanded="false" />
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
           </folding>
         </state>
       </provider>
@@ -1201,7 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1201373">
           <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,8 +1252,12 @@
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
           <folding />
+=======
+          <caret line="128" column="53" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
         </state>
       </provider>
     </entry>
@@ -1259,10 +1293,14 @@
     <entry file="file://$PROJECT_DIR$/vender-css/discover.css">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0">
           <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
 =======
         <state vertical-scroll-proportion="-0.625">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
           <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
           <folding />
@@ -1326,6 +1364,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9803922">
@@ -1365,6 +1404,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
     <entry file="file://$PROJECT_DIR$/music-service/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1376,7 +1417,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="false" />
@@ -1387,10 +1428,14 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.38480696">
           <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
 =======
         <state vertical-scroll-proportion="-6.2352943">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
           <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
 >>>>>>> adaf1ed381bff17b53d55c6f7209a4027cef4e8b
           <folding>
@@ -1400,17 +1445,33 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    <entry file="file://$PROJECT_DIR$/vender-css/rank-list.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="148" column="22" selection-start-line="148" selection-start-column="22" selection-end-line="148" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="759" column="21" selection-start-line="759" selection-start-column="21" selection-end-line="759" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 08b2a6b7cfd7060d6617fe68a5093d8f4ffb31da
     <entry file="file://$PROJECT_DIR$/discover/RankList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625222">
-          <caret line="147" column="32" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6564626">
+          <caret line="330" column="48" selection-start-line="330" selection-start-column="48" selection-end-line="330" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#i#1;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7240#7484#0" expanded="false" />
-            <element signature="e#11723#11954#0" expanded="false" />
-            <element signature="e#12042#12549#0" expanded="false" />
-            <element signature="e#12555#12627#0" expanded="false" />
+            <element signature="e#11402#11633#0" expanded="false" />
           </folding>
         </state>
       </provider>

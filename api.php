@@ -31,7 +31,7 @@ function curl($url, $post_data){ //从网易云音乐读取数据
         'User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36',
         'Content-Type: application/x-www-form-urlencoded',
         'Referer: http://music.163.com/',
-        'Cookie: appver=1.5.6;'
+        'Cookie: appver=1.4.4;'
     );
     curl_setopt($curl, CURLOPT_URL,$url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -118,7 +118,6 @@ switch($types)
         $post_data = '';
         echojson(curl($url,$post_data));
         break;
-        
     case "usrplaylist":    // 获取歌单中的歌曲
         $id = getParam('id');  //歌单ID
         if(!$id){
@@ -139,25 +138,28 @@ switch($types)
          $post_data = '';
          echojson(curl($url,$post_data));
          break;
-    case "comments":
-    	  $id = getParam('id');  //歌单ID
-         if(!$id){
-            $tempArr = array("code"=>-1,"msg"=>"歌单ID为空");
-            echojson(json_encode($tempArr));
-         }
-         $url= "http://music.163.com/v1/weapi/v1/resource/comments?id=($id)&limit=10&offset=0&csrf_token=";    //请求url
+    case "banner":
+	     $csrf_token = getParam('csrf_token','');
+         $url= "http://music.163.com/api/v2/banner/get?csrf_token=($csrf_token)";    //请求url
          $post_data = '';
          echojson(curl($url,$post_data));
          break;
-    case "banner":
-	     $csrf_token = getParam('csrf_token','')
-         $url= "http://music.163.com/api/v2/banner/get?csrf_token=($csrf_token)";    //请求url
-         echo($url)
+	case "comments":
+	     $commentid = getParam('commentid','');
+	     $limit = getParam('count');  //每页显示数量
+        $pages = getParam('pages');  //页码
+        if($pages>10000 || $pages<1)$pages=1;    //纠正错误的值
+        if($limit == "") $limit = 20;
+        $offset= ($pages-1) * $limit;     //偏移量
+         $url= "http://music.163.com/api/v1/resource/comments/{$commentid}?limit=" . $limit . '&offset=' . $offset;    //请求url
          $post_data = '';
          echojson(curl($url,$post_data));
+/*
+		 $tempArr = array("code"=>-1,"msg"=>"暂无评论");
+         echojson(json_encode($tempArr));
+*/
          break;
     case "search":  //搜索歌曲
-    	 break;
     default:
         $s = getParam('name');  //歌名
         $limit = getParam('count');  //每页显示数量
@@ -167,8 +169,8 @@ switch($types)
         $offset= ($pages-1) * $limit;     //偏移量
         
         if(!$s){
-            $tempArr = array("code"=>-1,"msg"=>"歌名为空111");
-//             echojson(json_encode($tempArr));
+            $tempArr = array("code"=>-1,"msg"=>"歌名为空");
+            echojson(json_encode($tempArr));
         }else{
             $url= "http://music.163.com/api/search/get/web?csrf_token=";    //请求url
             $post_data = 'hlpretag=<span class="s-fc7">&hlposttag=</span>&s='. $s . '&type=1&offset='. $offset . '&total=true&limit=' . $limit;

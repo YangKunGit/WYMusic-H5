@@ -11,20 +11,26 @@ $(function () {
 //    discover页添加轮播图
     initDiscover()
 
+//     iframe界面
+    var hash = gethash()
+    if (hash) {
+        if (hash.indexOf('discover') === 0) {
+            labelClickFun(0)
+        } else if (hash.indexOf('toplist') === 0) {
+            labelClickFun(1)
+        }
+    } else {
+        labelClickFun(0)
+    }
+
 //    iframe高度计算
-    labelClickFun(0)
-    startInit('discover-box', 700)
+    startInit('myIframe', 700)
 
     //playBar
     playBarCtrol()
 
-    window.onhashchange = function () {
-        console.log('加载')
-        var hash = location.hash;
-        console.log(hash)
-        var url = hash.substring(1,hash.length);
-        //$("#baseIframe").attr("src", url);
-    }
+//    keyborad
+    keyboradListen()
 
 })
 
@@ -60,7 +66,7 @@ function navbarAction() {
         $('#content-box').children().fadeOut()
         switch ($(this).index()) {
             case 0:    // 发现音乐
-                $('#discover-box').fadeIn()
+                $('#myIframe').fadeIn()
                 $('.zone-list li').removeClass('active').first().addClass('active')
                 break
             case 1:    // 我的音乐
@@ -87,20 +93,13 @@ function labelClickFun(index) {
     li.removeClass('active')
     li.eq(index).addClass('active')
     //$(this).addClass('active')
-    var box = $('#discover-box')[0]
+    var box = $('#myIframe')[0]
     switch (index) {
         case 0:     //  推荐
             box.contentWindow.location.href = '../WYMusic-H5/discover/discover.html'
-            loadIframe('discover')
             break
         case 1:     //  排行榜
-            //$('#rank-list-box').fadeIn()
-            loadIframe('ranklist')
             box.contentWindow.location.href = '../WYMusic-H5/discover/RankList.html'
-            //$('#discover-box').attr('src', '../WYMusic-H5/discover/RankList.html')
-
-            //window.navigator('')
-            //window.navigate('../WYMusic-H5/discover/RankList.html')
             break
         case 2:     //  歌单
             break
@@ -111,19 +110,14 @@ function labelClickFun(index) {
         case 5:     //  新碟上架
             break
     }
-    startInit('discover-box', 700)
+    startInit('myIframe', 700)
 }
 
-//  TODO 锚点变化
-function loadIframe(url) {
-    var u = window.location.href
-    console.log(u)
-    var end = u.indexOf("#")
-    var rurl = u.substring(0,end)
-    console.log(rurl)
-    //设置新的锚点
-    window.location.href = rurl + "#" + url
-    console.log(window.location.href)
+//  TODO 获取锚点
+function gethash() {
+    var u = window.location.hash
+    var rurl = u.split('/')
+    return rurl[rurl.length - 1]
 }
 
 // 滚动监听
@@ -182,7 +176,6 @@ function reinitIframe(iframeId, minHeight) {
 }
 
 function startInit(iframeId, minHeight) {
-        //eval("window.IE9MoreRealHeight" + iframeId + "=0");
     window.setInterval(function () {
         reinitIframe(iframeId, minHeight)
     }, 200)
@@ -190,7 +183,6 @@ function startInit(iframeId, minHeight) {
 
 var tn
 function playBarCtrol() {
-    console.log('$$$$$$$$$$$$$')
     var bar =  $('.g-bottomBar')
     bar.hover(function () {
         clearTimeout(tn)
@@ -212,5 +204,24 @@ function playBarCtrol() {
         var bar = $('.g-bottomBar')
         bar.toggleClass('m-playbar-unlock')
         bar.toggleClass('m-playbar-lock')
+        lock = !lock
+        changePlaySetting('lock')
+    })
+
+}
+
+//  键盘事件监听
+function keyboradListen() {
+    $(window).keydown(function (event) {
+        var keyCode = event.keyCode || event.which || event.charCode;
+        var ctrlKey = event.ctrlKey || event.metaKey;
+        if (keyCode === 32) {
+            playOrPause()
+        } else if (ctrlKey && keyCode === 39) {
+            playNext()
+        } else if (ctrlKey && keyCode === 37) {
+            playFront()
+        }
+        return false
     })
 }

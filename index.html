@@ -37,11 +37,11 @@
             <nav class="collapse navbar-collapse pull-left">
                 <ul id="main-menu" class="nav navbar-nav">
                     <li class="active discover"><a href="#">发现音乐</a></li>
-                    <li><a href="#">我的音乐</a></li>
-                    <li><a href="#">朋友</a></li>
-                    <li><a href="#">商城</a></li>
-                    <li><a href="#">音乐人</a></li>
-                    <li><a href="#">下载客户端</a></li>
+                    <li><a href="#/my">我的音乐</a></li>
+                    <li><a href="#/friend">朋友</a></li>
+                    <li><a href="#/shop">商城</a></li>
+                    <li><a href="#/artist">音乐人</a></li>
+                    <li><a href="#/download">下载客户端</a></li>
                 </ul>
             </nav>
         </div>
@@ -49,19 +49,20 @@
 </div>
 <div id="zone" class="container">
     <ul class="zone-list">
-        <li class="active"><a href="#">推荐</a></li>
-        <li><a href="#">排行榜</a></li>
-        <li><a href="#">歌单</a></li>
-        <li><a href="#">主播电台</a></li>
-        <li><a href="#">歌手</a></li>
-        <li><a href="#">新碟上架</a></li>
+        <li class="active"><a href="#/discover">推荐</a></li>
+        <li><a href="#/discover/toplist">排行榜</a></li>
+        <li><a href="#/discover/playlist">歌单</a></li>
+        <li><a href="#/discover/djradio">主播电台</a></li>
+        <li><a href="#/discover/artist">歌手</a></li>
+        <li><a href="#/discover/album">新碟上架</a></li>
     </ul>
 </div>
+
 <!--内容页-->
 <div id="content-box">
-    <iframe id="discover-box" src="about:blank" width="100%" height="700px" frameborder=0 scrolling=no></iframe>
-    <!--<iframe id="rank-list-box" style="display: none" src="./discover/RankList.html" frameborder="0" width="100%" height="400px" scrolling="no"></iframe>-->
+    <iframe id="myIframe" name="myIframe" src="about:blank" width="100%" height="700px" frameborder=0 scrolling=no></iframe>
 </div>
+
 <!--页脚 footer-->
 <div id="footer">
 <div class="f-content row">
@@ -89,17 +90,19 @@
     </div>
 </div>
 </div>
+
 <!--top-btn-->
 <a href="#" class="scrollup"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
 <!--播放器 player-->
 <div class="g-bottomBar m-playbar-unlock">
     <div class="hand"></div>
     <div class="play-bar">
         <div id="g-player">
             <div class="btns">
-                <a href="javascript:;" class="prv" title="上一首(ctrl+←)"></a>
-                <a href="javascript:;" class="play" title="播放/暂停(p)"></a>
-                <a href="javascript:;" class="next" title="下一首(ctrl+→)"></a>
+                <a href="javascript:;" data-action="prv" class="prv" title="上一首(cmd+←)" onclick="playFront()"></a>
+                <a href="javascript:;" data-action="play" class="play" title="播放/暂停(p)" onclick="playOrPause()"></a>
+                <a href="javascript:;" data-action="next" class="next" title="下一首(cmd+→)" onclick="playNext()"></a>
             </div>
             <div class="song-img">
                 <img src="http://p3.music.126.net/bARV4ZiYwNpoaZTyhtEwLg==/18679603046750668.jpg?param=34y34" alt="">
@@ -116,16 +119,16 @@
                             <span class="btn"></span>
                         </div>
                     </div>
-                    <div class="time"><span>01:33</span> / 03:43</div>
+                    <div class="time"><span>01:33</span><span> / 03:43</span></div>
                 </div>
             </div>
             <div class="oper">
-                <a href="javascript:;" class="icn icn-add" title="收藏"></a>
-                <a href="javascript:;" class="icn icn-share" title="分享"></a>
+                <a href="javascript:;" data-action="collection" class="icn icn-add" title="收藏"></a>
+                <a href="javascript:;" data-action="share" class="icn icn-share" title="分享"></a>
                 <!--<div class="ctrl">-->
-                    <a href="javascript:;" class="icn icn-vol" title="音量"></a>
-                    <a href="javascript:;" class="icn icn-loop" title="循环"></a>
-                    <a href="javascript:;" class="icn icn-list" title="播放列表"></a>
+                    <a href="javascript:;" data-action="volumn" class="icn icn-vol" title="音量"></a>
+                    <a href="javascript:;" data-action="mode" class="icn icn-loop" title="循环" onclick="changePlayMode()"></a>
+                    <a href="javascript:;" data-toggle="tooltip" data-action="playlist" class="icn icn-list" title="播放列表"></a>
                 <!--</div>-->
             </div>
         </div>
@@ -138,15 +141,18 @@
     </div>
 </div>
 <!--播放器-->
-<audio id="music" src="" @timeupdate="updateTime" ended="playContinue" autoplay></audio>
-
+<audio id="music" src="" ontimeupdate="updateTime()" onended="playContinue()"></audio>
 
 <script src="./venders-js/jquery-3.2.0.min.js"></script>
 <script src="./venders-js/tether.min.js"></script>
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./venders-js/bootstrap.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/data.js"></script>
+<script src="./js/play.js"></script>
 <script>
+    $(function () {
+        $('[data-toggle=tooltip]').tooltip()
+    })
 </script>
 </body>
 </html>
