@@ -8,6 +8,9 @@
 - 基于iframe实现将重复的导航栏, footer, 播放器等元素的抽离, 达到多文件加载, 从而实现页面的局部刷新
 - 对于音乐播放部分的抽离, 降低耦合性, 
 
+## 效果
+![image](https://github.com/YKDistinctive/WYMusic-H5/blob/master/img/wangyiyun.gif)
+
 ## 使用
 1. 直接在浏览器打开根目录下的index.html文件即可
 2. 部分数据因为接口被加密使用的固定json, 部分请求接口放在api.php中, 运行这个php文件然后将setup.js文件中的apiUrl参数的地址改为你当前电脑的IP
