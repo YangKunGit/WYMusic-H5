@@ -58,10 +58,10 @@ $(function () {
 
 //  播放
 function play() {
+    console.log('播放')
     $('#music')[0].play()
     $('#g-player .play').css('background-position', '-40px -165px')
     playing = true
-    //playBarCtrol()
 }
 
 //  暂停
@@ -90,6 +90,7 @@ function setPlayList(list) {
 
 //  设置播放单曲信息
 function setPlayMusic() {
+    console.log(song)
     $('#music').attr('src', song.url)
     $('.song-img>img').attr('src', song.coverImgUrl)
     $('.play-ctrl>.words>.name').text(song.name)

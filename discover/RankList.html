@@ -335,11 +335,11 @@ var tracksList
             tracksList.forEach(function (item) {
                 arr.push({
                     name: item.name,
-                    singer: item.artists[0].name | item.singer,
+                    singer: item.artists[0].name,
                     coverImgUrl: item.album.picUrl,
                     id: item.id,
                     url: item.mp3Url,
-                    duration: timeComplate(item.duration / 1000)
+                    duration: window.parent.timeComplate(item.duration / 1000)
                 })
             })
             window.parent.setPlayList({index: $(this).parents('tr').index(), list: arr})
