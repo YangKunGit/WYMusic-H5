@@ -15,7 +15,7 @@
 1. 直接在浏览器打开根目录下的index.html文件即可
 2. 部分数据因为接口被加密使用的固定json, 部分请求接口放在api.php中, 运行这个php文件然后将config.js文件中的apiUrl参数的地址改为你当前电脑的IP
 
-## 参考
+## 致谢
 ### 用到的第三方库
 - jQuery
 - Bootstrap
@@ -23,6 +23,10 @@
 ### 网易云接口API参考
 - https://github.com/mengkunsoft/MKOnlineMusicPlayer
 - http://moonlib.com/606.html
+### api资源
+- 网易云音乐
 
+## 关于版权
+ 本项目仅供学习参考, 项目中用到的所有音乐资源的版权归属网易云音乐所有
 
 
