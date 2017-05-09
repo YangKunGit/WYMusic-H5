@@ -26,8 +26,8 @@
                                 <h2 class="toplist-name"></h2>
                                 <p><i class="fa fa-clock-o"></i> 最近更新：<span>04月11日</span> <i style="font-size: 12px" class="fa-icon update-f">（每天更新）</i></p>
                                 <div class="btn-group open">
-                                    <a class="btn btn-primary play-btn" href="#"><i class="fa fa-play-circle-o"></i> 播放</a>
-                                    <a class="btn btn-primary" href="#"><span class="fa fa-plus"></span></a>
+                                    <a class="btn btn-primary play-btn" href="javascript:;"><i class="fa fa-play-circle-o"></i> 播放</a>
+                                    <a class="btn btn-primary addlist-btn" href="#"><span class="fa fa-plus"></span></a>
                                 </div>
                                 <a href="#" class="btn btn-default"><i class="fa fa-cube fa-icon"></i><span class="collection"></span></a>
                                 <a class="btn btn-default"><i class="fa fa-share-square-o fa-icon"></i><span class="share"></span></a>
@@ -112,12 +112,9 @@
 
 <script src="../venders-js/jquery-3.2.0.min.js"></script>
 <script src="../js/data.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/baseFun.js"></script>
 <script>
-//    接口地址
-    var apiUrl = 'http://192.168.1.114:8888/api.php'
-//    var apiUrl = 'http://192.168.1.115:8888/api.php'
-//    var apiUrl = 'http://192.168.1.101:8888/api.php'
-//    $(function () {
 //    排行榜列表
 var topArray
 //    当前歌单下标
@@ -130,17 +127,16 @@ var tracksList
 //    当前页数
     var page = 1
     $(function () {
-//        window.location.href = 'http://localhost:63342/WYMusic-H5/index.html#rank-list'
 //        更新榜单列表
         updataList()
 
-//          获取URL参数
+        //          获取URL参数
         var id = getParams('id')
-        console.log(id)
         if (id) {
             for (var i = 0; i < topArray.length; i++) {
                 var model = topArray[i]
                 if (model.id == id) {
+                    console.log(i)
                     toplistIndex = i
                     listClick()
                 }
@@ -150,18 +146,6 @@ var tracksList
             listClick()
         }
     })
-
-//      获取url中的参数
-    function getParams(name) {
-        var hash = window.parent.location.hash
-        var str = hash.split('?')[1]
-        if (str) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = str.match(reg);
-            if (r != null) return decodeURI(r[2]);
-        }
-    }
-
 
     function updataList() {
         topArray = []
@@ -182,13 +166,13 @@ var tracksList
                 commentThreadId: list[index].commentThreadId    //  评论id
             }
 //            标签
-            var element = '<li> ' +
+            var element = '<li> <a href="../#/discover/toplist?id=' + topModel.id + '" target="_parent">' +
                     '<div class="left"> ' +
                     '<img src="' + topModel.coverImg + '?param=40y40" alt="">' +
                     ' </div> ' +
                     '<p>' + topModel.name + '</p> ' +
                     '<p>' + topModel.updateFrequency + '</p> ' +
-                    '</li>'
+                    '</a></li>'
             if (index < 4) {        //  特色榜列表
                 teseList.append(element)
             } else {                //  全球榜列表
@@ -294,7 +278,7 @@ var tracksList
             var uicon = ''
             if (obj.lastRank) {
                 if ((parseInt(index) + 1) == parseInt(obj.lastRank)) {
-                    uicon = '<i>- 0</i>'
+                    uicon = '<i>-</i><span>0</span>'
                 } else if ((parseInt(index) + 1) > parseInt(obj.lastRank)) {
                     uicon = '<i class="u-icn up-icon"></i><span>' + ((parseInt(index) + 1) - parseInt(obj.lastRank)) + '</span>'
                 } else {
@@ -316,7 +300,7 @@ var tracksList
                         '<div class="song-name"><a href="">' + obj.name + '</a></div> ' +
                     '</div> </td> ' +
                     '<td class="g-msg w1 ' + (index < 3 ? 'td-pad3' : '') + '"> ' +
-                        '<p class="g-time">' + compluteTime(obj.duration) +'</p> ' +
+                        '<p class="g-time">' + timeComplate(obj.duration / 1000) +'</p> ' +
                         '<div class="tool-icon"> ' +
                         '<i class="fa fa-plus"></i> ' +
                         '<i class="fa fa-cube fa-icon"></i> ' +
@@ -331,21 +315,34 @@ var tracksList
         $('.g-list tbody tr td.w2 .tt i').click(function () {
             $(this).parents('tr').siblings().find('.tt i').removeClass('active')
             $(this).addClass('active')
-            var arr = []
-            tracksList.forEach(function (item) {
-                arr.push({
-                    name: item.name,
-                    singer: item.artists[0].name,
-                    coverImgUrl: item.album.picUrl,
-                    id: item.id,
-                    url: item.mp3Url,
-                    duration: window.parent.timeComplate(item.duration / 1000)
-                })
-            })
-            window.parent.setPlayList({index: $(this).parents('tr').index(), list: arr})
-            window.parent.setPlayMusic()
+            addPlayList()
             window.parent.play()
         })
+//        播放按钮点击方法
+        $('.play-btn').click(function () {
+            addPlayList()
+            window.parent.play()
+        })
+//        添加播放列表
+        $('.addlist-btn').click(function () {
+            addPlayList()
+        })
+    }
+
+    function addPlayList() {
+        var arr = []
+        tracksList.forEach(function (item) {
+            arr.push({
+                name: item.name,
+                singer: item.artists[0].name,
+                coverImgUrl: item.album.picUrl,
+                id: item.id,
+                url: item.mp3Url,
+                duration: window.parent.timeComplate(item.duration / 1000)
+            })
+        })
+        window.parent.setPlayList({index: 0, list: arr})
+        window.parent.setPlayMusic()
     }
 
     function commentPage(jsonData, isRest) {
@@ -462,61 +459,8 @@ var tracksList
         }
     }
 
-//    计算毫秒为00:00格式
-    function compluteTime(seconds) {
-        seconds = Math.floor(seconds / 1000)
-        var min = Math.floor(seconds / 60),
-                second = seconds % 60
-        return (add0(min) + ':' + add0(second))
-    }
 
-    function add0(m){
-        return m < 10 ? '0' + m : m
-    }
 
-//    两个时间戳的时间差
-    function diffTime(t) {
-        var date1 = new Date(t);  //开始时间
-        var date2 = new Date();    //结束时间
-        var date3 = date2.getTime() - date1.getTime()  //时间差的毫秒数
-//计算出相差天数
-        var days = Math.floor(date3 / (24 * 3600 * 1000))
-//计算出小时数
-        var leave1 = date3 % (24 * 3600 * 1000)    //计算天数后剩余的毫秒数
-        var hours = Math.floor(leave1 / (3600 * 1000))
-//计算相差分钟数
-        var leave2 = leave1 % (3600 * 1000)        //计算小时数后剩余的毫秒数
-        var minutes = Math.floor(leave2 / (60 * 1000))
-//计算相差秒数
-        var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
-        var seconds = Math.round(leave3 / 1000)
-        if (days > 1) {
-            return date1.Format('MM月dd日 hh:mm')
-        } else if (days === 1) {
-            return date1.Format('昨天 hh:mm')
-        } else if (days < 1 && hours > 1) {
-            return date1.Format('hh:mm')
-        } else {
-            return date1.Format('mm分钟前')
-        }
-    }
-
-//    将时间戳转成日期格式
-Date.prototype.Format = function (fmt) {
-    var o = {
-        "M+": this.getMonth() + 1, //月份
-        "d+": this.getDate(), //日
-        "h+": this.getHours(), //小时
-        "m+": this.getMinutes(), //分
-        "s+": this.getSeconds(), //秒
-        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
-        "S": this.getMilliseconds() //毫秒
-    };
-    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-    for (var k in o)
-        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-    return fmt;
-}
 </script>
 </body>
 </html>

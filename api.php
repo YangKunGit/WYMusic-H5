@@ -159,7 +159,29 @@ switch($types)
          echojson(json_encode($tempArr));
 */
          break;
-    case "search":  //搜索歌曲
+    case "search":  //搜索
+    	 $key = getParam('s','');	//	搜索的关键词
+	     $limit = getParam('count');  //每页显示数量
+        $pages = getParam('pages');  //页码
+        if($pages>10000 || $pages<1)$pages=1;    //纠正错误的值
+        if($limit == "") $limit = 20;
+        $offset= ($pages-1) * $limit;     //偏移量
+        $url = "http://music.163.com/api/search/suggest/web?csrf_token=&s=" . $key . "&limit=" . $limit . "&offset=" . $offset;		//请求url
+         $post_data = '';
+         echojson(curl($url,$post_data));
+    	 break;
+	case "searchType":	//分类搜索
+		$key = getParam('s','');		//	搜索的关键词
+		$type = getParam('type', '1');	//	搜索类型 歌曲 1, 专辑 10, 歌手 100, 歌单 1000, 用户 1002, mv 1004, 歌词 1006, 主播电台 1009
+		 $limit = getParam('count');  //每页显示数量
+        $pages = getParam('pages');  //页码
+        if($pages>10000 || $pages<1)$pages=1;    //纠正错误的值
+        if($limit == "") $limit = 20;
+        $offset= ($pages-1) * $limit;     //偏移量
+        $url = "http://music.163.com/api/cloudsearch/get/web?csrf_token=&s=" . $key . "&limit=" . $limit . "&offset=" . $offset . "&type=" . $type;
+        $post_data = '';
+         echojson(curl($url,$post_data));
+         break;
     default:
         $s = getParam('name');  //歌名
         $limit = getParam('count');  //每页显示数量
@@ -175,7 +197,7 @@ switch($types)
             $url= "http://music.163.com/api/search/get/web?csrf_token=";    //请求url
             $post_data = 'hlpretag=<span class="s-fc7">&hlposttag=</span>&s='. $s . '&type=1&offset='. $offset . '&total=true&limit=' . $limit;
             echojson(curl($url,$post_data));
-        }   
+        }
 }
 
 /**

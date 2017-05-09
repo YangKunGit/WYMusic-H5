@@ -1,22 +1,9 @@
 /**
  * Created by YK on 17/4/18.
  */
-
-//    常参
-var PLAY_MODE_NAME = ['单曲循环', '顺序播放', '随机播放']
-var SINGLE = 0          //  单曲循环
-var SEQUENTIAL = 1      //  顺序播放
-var RANDOM = 2          //  随机播放
-var DEFAULT_IMG = '../assets/Vue_Music_Blur.png'
-var DEFAULT_SONG_NAME = 'MUSIC'
-var DEFAULT_SINGER_NAME = 'YANG KUN'
-
-
-//  变量
+    //requir('./baseFun.js')
+//    播放器参数
 var playing = false                         //  是否在播放
-var playMode = SEQUENTIAL                   //  播放模式
-var volume = 0.5                           //  播放音量
-var autoPlay = false                        //  自动播放
 var lock = false                            //  播放bar锁
 var index = 0                               //  播放列表中的下标
 var song = {
@@ -33,7 +20,6 @@ $(function () {
     //  本地保存信息的初始化
     if (window.localStorage.getItem('playSetting')) {
         var playSetting = JSON.parse(window.localStorage.getItem('playSetting'))
-        console.log(playSetting)
         playMode = playSetting.playMode
         volume = playSetting.volume
         autoPlay = playSetting.autoPlay
@@ -90,7 +76,7 @@ function setPlayList(list) {
 
 //  设置播放单曲信息
 function setPlayMusic() {
-    console.log(song)
+    //console.log(song)
     $('#music').attr('src', song.url)
     $('.song-img>img').attr('src', song.coverImgUrl)
     $('.play-ctrl>.words>.name').text(song.name)
@@ -113,7 +99,6 @@ function updateTime() {
     //console.log(currentTime)
     var duration = $('#music')[0].duration
     var durationTime = timeComplate(duration)
-    //console.log(Math.ceil((current / duration) * 100) + '%')
     $('.m-pbar>.barbg>.cur').css('width', ((current / duration) * 100).toFixed(2) + '%')
     $('.m-pbar>.time>span:first-child').text(currentTime)
 }
@@ -185,17 +170,4 @@ function changePlaySetting(key) {
     } else {
         window.localStorage.setItem('playSetting', JSON.stringify({playMode: playMode, volume: volume, autoPlay: autoPlay, index: index, lock: lock}))
     }
-}
-
-
-//  将秒格式化为mm:ss
-function timeComplate(seconds) {
-    seconds = Math.floor(seconds)
-    var min = Math.floor(seconds / 60),
-        second = seconds % 60
-    return (add0(min) + ':' + add0(second))
-}
-
-function add0(m) {
-    return m < 10 ? '0' + m : m
 }

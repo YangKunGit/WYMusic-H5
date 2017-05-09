@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./vender-css/normalize.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./vender-css/search.css">
+</head>
+<body>
+<div id="search">
+    <div class="bg-box">
+      <div class="g-wrap2">
+          <div class="search-input">
+              <div class="search-bar">
+                  <form action="">
+                      <input type="text" name="search" placeholder="单曲/歌手/专辑/歌单/MV/用户">
+                  </form>
+                  <a class="search-btn" href="javascript:;"><i class="fa fa-search"></i></a>
+                  <div class="search-menu">
+                  </div>
+              </div>
+          </div>
+          <div class="r-search">
+              <p>搜索“aesv”，找到 81 首单曲</p>
+          </div>
+          <ul id="search-type" class="nav nav-tabs nav-justified">
+              <li data-type="1" class="active"><a href="./#/search?s=&type=1" target="_parent">单曲</a></li>
+              <li data-type="100"><a href="./#/search?s=&type=100" target="_parent">歌手</a></li>
+              <li data-type="10"><a href="./#/search?s=&type=10" target="_parent">专辑</a></li>
+              <li data-type="1004"><a href="./#/search?s=&type=1004" target="_parent">MV</a></li>
+              <li data-type="1006"><a href="./#/search?s=&type=1006" target="_parent">歌词</a></li>
+              <li data-type="1000"><a href="./#/search?s=&type=1000" target="_parent">歌单</a></li>
+              <li data-type="1009"><a href="./#/search?s=&type=1009" target="_parent">主播电台</a></li>
+              <li data-type="1002"><a href="./#/search?s=&type=1002" target="_parent">用户</a></li>
+          </ul>
+          <div class="n-srchrst">
+            <p>暂无数据,  待完成</p>
+          </div>
+      </div>
+    </div>
+</div>
+
+<script src="./venders-js/jquery-3.2.0.min.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/baseFun.js"></script>
+<script>
+
+    $(function () {
+        init()
+
+        inputListen()
+
+        bindClick()
+    })
+
+    function init() {
+        const key = getParams('s')
+        const type = getParams('type')
+        var index
+        $('.search-bar input').val(key)
+        $('#search-type li').removeClass('active')
+        switch (parseInt(type)) {
+            case 1: //  单曲
+                index = 0
+                break
+            case 100: //  歌手
+                index = 1
+                break
+            case 10: //  专辑
+                index = 2
+                break
+            case 1004: //  MV
+                index = 3
+                break
+            case 1006: //  歌词
+                index = 4
+                break
+            case 1000: //  歌单
+                index = 5
+                break
+            case 1009: //  主播电台
+                index = 6
+                break
+            case 1002: //  用户
+                index = 7
+                break
+        }
+        console.log(index)
+        $('#search-type li').eq(index).addClass('active')
+    }
+
+    //  搜索框监听
+    function inputListen() {
+        $('.search-bar input').focus(function () {  //  输入框获得焦点
+            if ($(this).val()) {
+                $('.search-menu').fadeIn()
+            }
+        }).blur(function () {       //  输入框失去焦点
+            $('.search-menu').fadeOut()
+        }).bind('input propertychange', function() {
+            if ($(this).val()) {
+                $('.search-menu').fadeIn()
+            } else {
+                $('.search-menu').fadeOut()
+            }
+            var val = $(this).val()
+            const type = getParams('type')
+            $('.search-bar .search-btn').attr({
+                href: './#/search?s=' + val + '&type=' + type,
+                target: '_parent'
+            })
+            console.log($('#search-type li a'))
+            $('#search-type li a').attr('href', function () {
+                return './#/search?s=' + val + '&type=' + $(this).parent().attr('data-type')
+            })
+            $.ajax({
+                type: "GET",
+                url: apiUrl,
+                data: 'types=search&s=' + val,
+                dataType : "jsonp",
+                success: function(jsonData) {
+                    const result = jsonData.result
+                    if (JSON.stringify(result) == '{}' || jsonData == undefined || jsonData.result == undefined) {
+                        return
+                    }
+                    updataSearchResult(result, val)
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        })
+    }
+
+    function updataSearchResult(result, val) {
+        var searchBox = $('.search-bar .search-menu')
+        var subElement = ''
+        for (var i = 0; i < result.order.length; i++) {
+            var order = result.order[i]
+            var title, imgClass, content, liEle = ''
+            switch (order) {
+                case 'songs':
+                    title = '单曲'
+                    for (var s = 0; s < result[order].length; s++) {
+                        liEle += '<li><a href="#">' + result[order][s].name + '-' + result[order][s].artists[0].name + '</a></li>'
+                    }
+                    break;
+                case 'artists':
+                    title = '歌手'
+                    for (var ar = 0; ar < result[order].length; ar++) {
+                        liEle += '<li><a href="#">' + result[order][ar].name + '</a></li>'
+                    }
+                    break;
+                case 'albums':
+                    title = '专辑'
+                    for (var al = 0; al < result[order].length; al++) {
+                        liEle += '<li><a href="#">' + result[order][al].name + '</a></li>'
+                    }
+                    break;
+                case 'mvs':
+                    title = 'MV'
+                    for (var m = 0; m < result[order].length; m++) {
+                        liEle += '<li><a href="#">' + result[order][m].name + '-' + result[order][m].artistName + '</a></li>'
+                    }
+                    break;
+                case 'playlists':
+                    title = '歌单'
+                    for (var p = 0; p < result[order].length; p++) {
+                        liEle += '<li><a href="#">' + result[order][p].name + '</a></li>'
+                    }
+                    break;
+            }
+            subElement += '<div class="item"> ' +
+                    '<h3><i class="icn u-icn u-icn-26"></i><em class="f-fl">' + title + '</em></h3> ' +
+                    '<ul class="f-cb ' + (i % 2 == 1 ? 'active' : '') + '"> ' + liEle + '</ul>' +
+                    '</div> '
+        }
+        var element = '<div class="m-search"> ' +
+                '<p class="note s-fcs"><a class="s-fcs" href="#/search?s=' + val + '&type=1002">搜“' + val + '” 相关用户</a>&gt;</p> ' +
+                subElement +
+                '</div>'
+        searchBox.html(element)
+        $('.search-menu .m-search .note').click(function () {
+            console.log('点击跳转')
+            $('#myIframe')[0].contentWindow.location.href = '../WYMusic-H5/search.html'
+        })
+    }
+
+    function bindClick() {
+        $('.search-bar .search-btn').click(function () {
+            const val = $('.search-bar input').val()
+            var type = 1
+            for (var i = 0; i < $('#search-type li').length; i++) {
+                if ($('#search-type li').eq(i).hasClass('active')) {
+                    type = $('#search-type li').eq(i).attr('data-type')
+                }
+            }
+            search(val, type)
+        })
+
+        $('#search-type li').click(function () {
+            const val = $('.search-bar input').val()
+            const type = $(this).attr('data-type')
+            $(this).siblings().removeClass('active')
+            $(this).addClass('active')
+            search(val, type)
+        })
+    }
+
+    function search(key, type) {
+        $.ajax({
+            type: "POST",
+            url: apiUrl,
+            data: 'types=searchType&s=' + key + '&type=' + type,
+            dataType : "jsonp",
+            success: function(jsonData) {
+                console.log(jsonData)
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -24,8 +24,10 @@
                 <div class="search-bar">
                     <i class="fa fa-search"></i>
                     <form action="">
-                        <input type="text" placeholder="单曲/歌手/专辑/歌单/MV/用户">
+                        <input type="text" name="search" placeholder="单曲/歌手/专辑/歌单/MV/用户">
                     </form>
+                    <div class="search-menu">
+                    </div>
                 </div>
                 <div class="login-btn">
                     <a href="#" data-toggle="popover" data-placement="bottom" data-container="body">登录
@@ -33,8 +35,8 @@
                     </a>
                 </div>
             </div>
-            <button style="background-color: red" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">汉堡按钮</button>
-            <nav class="collapse navbar-collapse pull-left">
+            <!--<button style="background-color: red" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">汉堡按钮</button>-->
+            <nav class="navbar-collapse pull-left">
                 <ul id="main-menu" class="nav navbar-nav">
                     <li class="active discover"><a href="#">发现音乐</a></li>
                     <li><a href="#/my">我的音乐</a></li>
@@ -148,10 +150,11 @@
 <script src="./venders-js/bootstrap.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/data.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/baseFun.js"></script>
 <script src="./js/play.js"></script>
 <script>
     $(function () {
-        $('[data-toggle=tooltip]').tooltip()
     })
 </script>
 </body>

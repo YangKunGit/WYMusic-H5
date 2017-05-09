@@ -12,16 +12,10 @@ $(function () {
     initDiscover()
 
 //     iframe界面
-    var hash = gethash()
-    if (hash) {
-        if (hash.indexOf('discover') === 0) {
-            labelClickFun(0)
-        } else if (hash.indexOf('toplist') === 0) {
-            labelClickFun(1)
-        }
-    } else {
-        labelClickFun(0)
-    }
+    hashChange()
+    $(window).on("hashchange", function() {//兼容ie8+和手机端
+        hashChange()
+    });
 
 //    iframe高度计算
     startInit('myIframe', 700)
@@ -32,7 +26,29 @@ $(function () {
 //    keyborad
     keyboradListen()
 
+//    搜索框监听
+    inputListen()
+
 })
+
+function hashChange() {
+    var hash = gethash()
+    if (hash) {
+        if (hash.indexOf('discover') === 0) {
+            labelClickFun(0)
+        } else if (hash.indexOf('toplist') === 0) {
+            labelClickFun(1)
+        } else if (hash.indexOf('search') === 0) {
+            $('#main-menu li').removeClass('active')
+            $('.zone-list li').removeClass('active')
+            $('#zone').css('height', '5px')
+            $('.zone-list').hide()
+            $('#myIframe')[0].contentWindow.location.href = '../WYMusic-H5/search.html'
+        }
+    } else {
+        labelClickFun(0)
+    }
+}
 
 
 function navbarAction() {
@@ -217,11 +233,102 @@ function keyboradListen() {
         var ctrlKey = event.ctrlKey || event.metaKey;
         if (keyCode === 32) {
             playOrPause()
+            return false
         } else if (ctrlKey && keyCode === 39) {
             playNext()
+            return false
         } else if (ctrlKey && keyCode === 37) {
             playFront()
+            return false
         }
-        return false
+        return true
+    })
+}
+
+//  搜索框监听
+function inputListen() {
+    $('.search-bar input').focus(function () {  //  输入框获得焦点
+        if ($(this).val()) {
+            $('.search-menu').fadeIn()
+        }
+    }).blur(function () {       //  输入框失去焦点
+        $('.search-menu').fadeOut()
+    }).bind('input propertychange', function() {
+        if ($(this).val()) {
+            $('.search-menu').fadeIn()
+        } else {
+            $('.search-menu').fadeOut()
+        }
+        var val = $(this).val()
+        $.ajax({
+            type: "GET",
+            url: apiUrl,
+            data: 'types=search&s=' + val,
+            dataType : "jsonp",
+            success: function(jsonData) {
+                const result = jsonData.result
+                if (jsonData == undefined || jsonData.result == undefined || jsonData.result.length == 0) {
+                    return
+                }
+                updataSearchResult(result, val)
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    })
+}
+
+function updataSearchResult(result, val) {
+    var searchBox = $('.search-bar .search-menu')
+    var subElement = ''
+    for (var i = 0; i < result.order.length; i++) {
+        var order = result.order[i]
+        var title, imgClass, content, liEle = ''
+        switch (order) {
+            case 'songs':
+                title = '单曲'
+                for (var s = 0; s < result[order].length; s++) {
+                    liEle += '<li><a href="#">' + result[order][s].name + '-' + result[order][s].artists[0].name + '</a></li>'
+                }
+                break;
+            case 'artists':
+                title = '歌手'
+                for (var ar = 0; ar < result[order].length; ar++) {
+                    liEle += '<li><a href="#">' + result[order][ar].name + '</a></li>'
+                }
+                break;
+            case 'albums':
+                title = '专辑'
+                for (var al = 0; al < result[order].length; al++) {
+                    liEle += '<li><a href="#">' + result[order][al].name + '</a></li>'
+                }
+                break;
+            case 'mvs':
+                title = 'MV'
+                for (var m = 0; m < result[order].length; m++) {
+                    liEle += '<li><a href="#">' + result[order][m].name + '-' + result[order][m].artistName + '</a></li>'
+                }
+                break;
+            case 'playlists':
+                title = '歌单'
+                for (var p = 0; p < result[order].length; p++) {
+                    liEle += '<li><a href="#">' + result[order][p].name + '</a></li>'
+                }
+                break;
+        }
+        subElement += '<div class="item"> ' +
+            '<h3><i class="icn u-icn u-icn-26"></i><em class="f-fl">' + title + '</em></h3> ' +
+            '<ul class="f-cb ' + (i % 2 == 1 ? 'active' : '') + '"> ' + liEle + '</ul>' +
+            '</div> '
+    }
+    var element = '<div class="m-search"> ' +
+        '<p class="note s-fcs"><a class="s-fcs" href="#/search?s=' + val + '&type=1002">搜“' + val + '” 相关用户</a>&gt;</p> ' +
+        subElement +
+        '</div>'
+    searchBox.html(element)
+    $('.search-menu .m-search .note').click(function () {
+        console.log('点击跳转')
+        $('#myIframe')[0].contentWindow.location.href = '../WYMusic-H5/search.html'
     })
 }

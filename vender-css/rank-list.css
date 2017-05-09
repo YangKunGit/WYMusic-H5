@@ -23,6 +23,10 @@
 .rank-list-slide li:hover {
     background: rgba(238, 238, 238, 0.73);
 }
+.rank-list-slide li > a {
+    color: #000;
+    text-decoration: none;
+}
 .left {
     float: left;
     width: 40px;
